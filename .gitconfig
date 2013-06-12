@@ -1,0 +1,7 @@
+[user]
+	name = Filippos Vasilakis
+	email = vasilakisfil@gmail.com
+[core]
+	editor = vim
+[push]
+	default = simple
