@@ -11,3 +11,8 @@ u           :Undo a change (Normal Mode)
 CTRL-R      :Redo a change (Normal Mode)
 ZZ          :Writes the file and exits (Normal Mode)
 
+            Moving Around
+$           :Moves to the cursor to the end of a line (Normal Mode)
+^           :Moves to the first non-blank character of the line (Normal Mode)
+0           :Mobes to the very first character of the line (Normal Mode)
+
