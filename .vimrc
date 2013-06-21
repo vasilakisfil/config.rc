@@ -21,6 +21,7 @@ Bundle 'gmarik/vundle'
 
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-haml'
+Bundle 'slim-template/vim-slim'
 Bundle 'altercation/vim-colors-solarized'
 
 
