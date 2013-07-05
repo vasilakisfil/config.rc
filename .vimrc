@@ -1,5 +1,4 @@
-" Use Vim settings, rather then Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
+
 set nocompatible
 filetype off
 
@@ -122,3 +121,4 @@ colorscheme solarized
 " ================ Other Stuff ======================
 " autosave when esc is pressed (only in insert mode)
 :imap <Esc> <Esc> :w <ENTER>
+:map <Esc> <Esc> :w <ENTER>
