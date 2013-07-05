@@ -22,6 +22,7 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-haml'
 Bundle 'slim-template/vim-slim'
 Bundle 'altercation/vim-colors-solarized'
+Bundle '907th/vim-auto-save'
 
 
 " ================ General Config ====================
@@ -119,6 +120,10 @@ colorscheme solarized
 
 
 " ================ Other Stuff ======================
-" autosave when esc is pressed (only in insert mode)
-:imap <Esc> <Esc> :w <ENTER>
-:map <Esc> <Esc> :w <ENTER>
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+
+" Autosave every 200ms
+let g:auto_save = 1
