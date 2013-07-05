@@ -117,3 +117,8 @@ set sidescroll=1
 " ================ ColorScheme ======================
 set background=dark
 colorscheme solarized
+
+
+" ================ Other Stuff ======================
+" autosave when esc is pressed (only in insert mode)
+:imap <Esc> <Esc> :w <ENTER>
