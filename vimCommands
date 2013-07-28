@@ -1,18 +1,18 @@
-h           :Move left (Normal Mode)
-j           :Move down (Normal Mode)
-k           :Move up (Normal Mode)
-l           :Move right (Normal Mode)
-i           :Insert text (Normal Mode)
-a           :Append text (Normal Mode)
-x           :Delete character (Normal Mode)
-dd          :Delete a line (Normal Mode)
-J           :Join lines (Normal Mode)
-u           :Undo a change (Normal Mode)
-CTRL-R      :Redo a change (Normal Mode)
-ZZ          :Writes the file and exits (Normal Mode)
+h           (N): Move left
+j           (N): Move down
+k           (N): Move up
+l           (N): Move right
+i           (N): Insert text
+a           (N): Append text
+x           (N): Delete character
+dd          (N): Delete a line
+J           (N): Join lines
+u           (N): Undo a change
+CTRL-R      (N): Redo a change
+ZZ          (N): Writes the file and exits
 
             Moving Around
-$           :Moves to the cursor to the end of a line (Normal Mode)
-^           :Moves to the first non-blank character of the line (Normal Mode)
-0           :Mobes to the very first character of the line (Normal Mode)
+$           (N): Moves to the cursor to the end of a line
+^           (N): Moves to the first non-blank character of the line
+0           (N): Mobes to the very first character of the line
 
