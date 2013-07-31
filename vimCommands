@@ -14,5 +14,8 @@ ZZ          (N): Writes the file and exits
             Moving Around
 $           (N): Moves to the cursor to the end of a line
 ^           (N): Moves to the first non-blank character of the line
-0           (N): Mobes to the very first character of the line
-
+0           (N): Moves to the very first character of the line
+w           (N): Moves to the start of the next word
+b           (N): Moves backwards to the start of the previous word
+e           (N): Moves to the next end of a word
+ge          (N): Moves to the previous end of a word
