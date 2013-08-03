@@ -19,3 +19,8 @@ w           (N): Moves to the start of the next word
 b           (N): Moves backwards to the start of the previous word
 e           (N): Moves to the next end of a word
 ge          (N): Moves to the previous end of a word
+
+
+            Quick helpfull shortcuts
+o           (N): Insert a new line after current line
+O           (N): Insert a new line before current line
