@@ -23,6 +23,7 @@ Bundle 'tpope/vim-haml'
 Bundle 'slim-template/vim-slim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle '907th/vim-auto-save'
+Bundle 'tpope/vim-surround'
 
 
 " ================ General Config ====================
