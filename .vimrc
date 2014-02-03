@@ -22,9 +22,11 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-haml'
 Bundle 'slim-template/vim-slim'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'vim-scripts/proton'
 Bundle '907th/vim-auto-save'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-markdown'
+Bundle 'scrooloose/nerdtree'
 
 " ================ General Config ====================
 

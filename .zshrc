@@ -49,3 +49,10 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PATH="/usr/local/heroku/bin:$PATH"
 
 setopt nocorrectall; setopt correct
+
+
+#256 colors
+TERM='xterm-256color'
+eval `dircolors /usr/src/dircolors/dircolors-solarized/dircolors.ansi-dark`
+alias grep='grep --color'
+alias ls='ls --color=auto'
