@@ -52,7 +52,4 @@ setopt nocorrectall; setopt correct
 
 
 #256 colors
-TERM='xterm-256color'
-eval `dircolors /usr/src/dircolors/dircolors-solarized/dircolors.ansi-dark`
-alias grep='grep --color'
-alias ls='ls --color=auto'
+export TERM='xterm-256color'
