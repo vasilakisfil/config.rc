@@ -19,6 +19,9 @@ w           (N): Moves to the start of the next word
 b           (N): Moves backwards to the start of the previous word
 e           (N): Moves to the next end of a word
 ge          (N): Moves to the previous end of a word
+gg          (N): Moves to the start of the line
+G           (N): Moves to the end of the file
+50G         (N): Moves to line 50 of the file
 
 
             Quick helpfull shortcuts
