@@ -155,5 +155,15 @@ function! TabMove(direction)
     endif
 endfunction
 
+" EXPLAIN THIS PLEASE
 map <F9> :call TabMove(-1)<CR>
 map <F10> :call TabMove(1)<CR>
+
+" Open NERDTree on vim startup (only when there is no file on the cli
+function! StartUp()
+    if 0 == argc()
+        NERDTree
+    end
+endfunction
+
+autocmd VimEnter * call StartUp()
