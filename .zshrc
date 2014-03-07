@@ -41,15 +41,12 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 export JAVA_HOME=/usr/java/jdk1.7.0_11/
 export PATH=$PATH:$JAVA_HOME
 
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-[[ -s "/home/vasilakisfil/.rvm/scripts/rvm" ]] && source "/home/vasilakisfil/.rvm/scripts/rvm"
-
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
 setopt nocorrectall; setopt correct
 
-
 #256 colors
 export TERM='xterm-256color'
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

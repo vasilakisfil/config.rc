@@ -118,6 +118,6 @@ alias enable_touchpad='python /home/vasilakis/.scripts/operate_xinput_device.py 
 export JAVA_HOME=/usr/java/jdk1.7.0_11/
 export PATH=$PATH:/usr/java/jdk1.7.0_11/bin/
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
 export TERM="xterm-256color"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
