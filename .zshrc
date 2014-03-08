@@ -49,4 +49,8 @@ setopt nocorrectall; setopt correct
 #256 colors
 export TERM='xterm-256color'
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+source ~/.rvm/scripts/rvm
+
+
