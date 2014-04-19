@@ -115,9 +115,6 @@ fi
 alias disable_touchpad='python /home/vasilakis/.scripts/operate_xinput_device.py 0 Synaptics TouchPad'
 alias enable_touchpad='python /home/vasilakis/.scripts/operate_xinput_device.py 1 Synaptics TouchPad'
 
-export JAVA_HOME=/usr/java/jdk1.7.0_11/
-export PATH=$PATH:/usr/java/jdk1.7.0_11/bin/
-
 export TERM="xterm-256color"
 
 

@@ -36,11 +36,6 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-export JAVA_HOME=/usr/java/jdk1.7.0_11/
-export PATH=$PATH:$JAVA_HOME
-
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
