@@ -28,6 +28,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-markdown'
 Bundle 'scrooloose/nerdtree'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'tfnico/vim-gradle'
 
 " ================ General Config ====================
 
