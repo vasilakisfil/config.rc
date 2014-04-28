@@ -1,5 +1,5 @@
 # Ignore everything
-/*
+*
 
 # But not these files...
 !.bash_profile
@@ -9,8 +9,3 @@
 !.vimrc
 !.gitconfig
 !vimCommands
-!/.gconf
-/.gconf/system
-/.gconf/apps/*
-!/.gconf/apps/guake
-
