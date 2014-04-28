@@ -157,6 +157,10 @@ function! TabMove(direction)
     endif
 endfunction
 
+" Tab movement
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right>   :tabnext<CR>
+
 " EXPLAIN THIS PLEASE
 map <F9> :call TabMove(-1)<CR>
 map <F10> :call TabMove(1)<CR>
