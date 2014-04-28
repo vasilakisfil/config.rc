@@ -173,3 +173,6 @@ function! StartUp()
 endfunction
 
 autocmd VimEnter * call StartUp()
+
+" Add 80 characters column highlight
+set colorcolumn=80
