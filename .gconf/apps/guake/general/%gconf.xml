@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="window_ontop" mtime="1380653494" type="bool" value="true"/>
+	<entry name="use_vte_titles" mtime="1380632271" type="bool" value="true"/>
+	<entry name="compat_delete" mtime="1398244394" type="string">
+		<stringvalue>delete-sequence</stringvalue>
+	</entry>
+	<entry name="compat_backspace" mtime="1398244394" type="string">
+		<stringvalue>ascii-delete</stringvalue>
+	</entry>
+	<entry name="scroll_output" mtime="1372689662" type="bool" value="false"/>
+	<entry name="open_tab_cwd" mtime="1393338322" type="bool" value="true"/>
+	<entry name="window_height" mtime="1398676060" type="int" value="58"/>
+	<entry name="use_default_font" mtime="1391295246" type="bool" value="false"/>
+	<entry name="scroll_keystroke" mtime="1398244394" type="bool" value="true"/>
+	<entry name="history_size" mtime="1398244394" type="int" value="1024"/>
+	<entry name="use_scrollbar" mtime="1398244394" type="bool" value="true"/>
+	<entry name="window_tabbar" mtime="1398244394" type="bool" value="true"/>
+	<entry name="window_losefocus" mtime="1398244394" type="bool" value="false"/>
+	<entry name="prompt_on_quit" mtime="1398244394" type="bool" value="true"/>
+	<entry name="use_popup" mtime="1398244394" type="bool" value="true"/>
+	<entry name="use_trayicon" mtime="1398244394" type="bool" value="true"/>
+</gconf>

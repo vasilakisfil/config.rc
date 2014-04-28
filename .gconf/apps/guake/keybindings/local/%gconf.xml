@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="toggle_fullscreen" mtime="1391911711" type="string">
+		<stringvalue>&lt;Alt&gt;grave</stringvalue>
+	</entry>
+	<entry name="close_tab" mtime="1380987204" type="string">
+		<stringvalue>&lt;Super&gt;w</stringvalue>
+	</entry>
+	<entry name="new_tab" mtime="1380987201" type="string">
+		<stringvalue>&lt;Super&gt;t</stringvalue>
+	</entry>
+	<entry name="rename_tab" mtime="1375791891" type="string">
+		<stringvalue>F12</stringvalue>
+	</entry>
+	<entry name="previous_tab" mtime="1358213354" type="string">
+		<stringvalue>&lt;Primary&gt;Left</stringvalue>
+	</entry>
+	<entry name="next_tab" mtime="1358213351" type="string">
+		<stringvalue>&lt;Primary&gt;Right</stringvalue>
+	</entry>
+</gconf>
