@@ -30,6 +30,12 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'tfnico/vim-gradle'
 
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'pangloss/vim-javascript'
+Bundle 'nathanaelkane/vim-indent-guides'
+
+Bundle 'scrooloose/syntastic'
+
 " ================ General Config ====================
 
 set number                      "Line numbers are good
