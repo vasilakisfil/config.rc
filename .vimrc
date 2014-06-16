@@ -33,6 +33,9 @@ Bundle 'tfnico/vim-gradle'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'pangloss/vim-javascript'
 Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'mustache/vim-mustache-handlebars'
+
+Bundle 'dsawardekar/ember.vim'
 
 Bundle 'scrooloose/syntastic'
 
