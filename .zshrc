@@ -50,3 +50,4 @@ source ~/.rvm/scripts/rvm
 
 
 export PATH=$HOME/npm/bin:$PATH
+source ~/.nvm/nvm.sh
