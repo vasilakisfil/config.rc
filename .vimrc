@@ -182,7 +182,7 @@ autocmd VimEnter * call StartUp()
 " Add 80 characters column highlight
 set colorcolumn=80
 
-" VERY IMPORTANT
+" VERY IMPORTANT (disables mouse copy pastes :/)
 map <MiddleMouse> <Nop>
 imap <MiddleMouse> <Nop>
 map <2-MiddleMouse> <Nop>
@@ -191,3 +191,6 @@ map <3-MiddleMouse> <Nop>
 imap <3-MiddleMouse> <Nop>
 map <4-MiddleMouse> <Nop>
 imap <4-MiddleMouse> <Nop>
+
+:set guioptions-=m  "remove menu bar #in gvim to enable use: set go-=T
+:set guioptions-=T  "remove toolbar #in gvim to enable use: set go-=m
