@@ -194,3 +194,5 @@ imap <4-MiddleMouse> <Nop>
 
 :set guioptions-=m  "remove menu bar #in gvim to enable use: set go-=T
 :set guioptions-=T  "remove toolbar #in gvim to enable use: set go-=m
+
+set encoding=utf-8 " fix nerdtree's dir problem in the server
