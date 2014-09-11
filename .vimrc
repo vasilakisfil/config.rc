@@ -31,6 +31,7 @@ Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'dsawardekar/ember.vim'
 
 Plugin 'scrooloose/syntastic'
+Plugin 'kien/ctrlp.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -194,3 +195,6 @@ imap <4-MiddleMouse> <Nop>
 
 :set guioptions-=m  "remove menu bar #in gvim to enable use: set go-=T
 :set guioptions-=T  "remove toolbar #in gvim to enable use: set go-=m
+
+"ctrlP
+set runtimepath^=~/.vim/bundle/ctrlp.vim
