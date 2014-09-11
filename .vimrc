@@ -2,13 +2,13 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vims
 call vundle#begin()
 
 
 " let Vundle manage Vundle
 " required! 
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/vundle.vim'
 
 
 Plugin 'vim-ruby/vim-ruby'
@@ -90,7 +90,7 @@ filetype plugin on
 filetype indent on
 
 " Display tabs and trailing spaces visually
-set list listchars=tab:\ \ ,trail:·
+"set list listchars=tab:\ \ ,trail:·
 
 set nowrap       "Don't wrap lines
 set linebreak    "Wrap lines at convenient points
@@ -196,5 +196,6 @@ imap <4-MiddleMouse> <Nop>
 :set guioptions-=m  "remove menu bar #in gvim to enable use: set go-=T
 :set guioptions-=T  "remove toolbar #in gvim to enable use: set go-=m
 
-"ctrlP
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+set runtimepath^=~/.vim/bundle/ctrlp.vim  "ctrlP
+set encoding=utf-8 " fix nerdtree's dir problem in the server
