@@ -28,8 +28,6 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'mustache/vim-mustache-handlebars'
 
-Plugin 'dsawardekar/ember.vim'
-
 Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
 
