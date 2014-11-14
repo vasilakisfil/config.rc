@@ -198,6 +198,9 @@ imap <4-MiddleMouse> <Nop>
 set runtimepath^=~/.vim/bundle/ctrlp.vim  "ctrlP
 set encoding=utf-8 " fix nerdtree's dir problem in the server
 
+set t_Co=256 "enabe 256 colors in vim
+
 "show whitespace
 :highlight ExtraWhitespace ctermbg=red guibg=red
 :match ExtraWhitespace /\s\+$/
+

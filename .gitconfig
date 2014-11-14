@@ -5,3 +5,9 @@
 	editor = vim
 [push]
 	default = simple
+[giggle]
+	main-window-maximized = true
+	main-window-geometry = 700x550+0+476
+	history-view-vpane-position = 453
+	main-window-view = HistoryView
+	file-view-vpane-position = 205
