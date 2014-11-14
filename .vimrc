@@ -204,3 +204,5 @@ set t_Co=256 "enabe 256 colors in vim
 :highlight ExtraWhitespace ctermbg=red guibg=red
 :match ExtraWhitespace /\s\+$/
 
+"disable visual flickering
+set novb
