@@ -1,5 +1,6 @@
-PATH
-  remote: ../middleman-prismic
+GIT
+  remote: git://github.com/kollegorna/middleman-prismic.git
+  revision: 9b9e2d45c8d7d1af47b18f49a5941abb8a86e6a6
   specs:
     middleman-prismic (0.1.0)
       middleman (~> 3.3)
@@ -98,7 +99,7 @@ GEM
       tilt (~> 1.4.1)
     padrino-support (0.12.5)
       activesupport (>= 3.1)
-    prismic.io (1.1.0)
+    prismic.io (1.1.1)
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
