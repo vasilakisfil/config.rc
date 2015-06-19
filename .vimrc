@@ -206,3 +206,5 @@ set t_Co=256 "enabe 256 colors in vim
 
 "disable visual flickering
 set novb
+
+let g:auto_save_in_insert_mode = 0
