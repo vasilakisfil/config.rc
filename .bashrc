@@ -122,4 +122,5 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 
 eval "$(direnv hook bash)" #direnv
+[[ -s "/home/vasilakisfil/.gvm/scripts/gvm" ]] && source "/home/vasilakisfil/.gvm/scripts/gvm"
 
