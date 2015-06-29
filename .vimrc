@@ -7,7 +7,7 @@ call vundle#begin()
 
 
 " let Vundle manage Vundle
-" required! 
+" required!
 Plugin 'gmarik/vundle.vim'
 
 
@@ -30,6 +30,8 @@ Plugin 'mustache/vim-mustache-handlebars'
 
 Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
+
+Plugin 'fatih/vim-go'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
