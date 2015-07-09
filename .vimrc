@@ -33,6 +33,8 @@ Plugin 'kien/ctrlp.vim'
 
 Plugin 'fatih/vim-go'
 
+Plugin 'ekalinin/Dockerfile.vim'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
