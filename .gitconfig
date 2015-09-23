@@ -12,4 +12,3 @@
 	main-window-view = HistoryView
 	file-view-vpane-position = 205
 [heroku]
-	account = kollegorna
