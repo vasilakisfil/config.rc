@@ -55,3 +55,5 @@ source ~/.nvm/nvm.sh
 
 eval "$(direnv hook zsh)" #direnv
 [[ -s "/home/vasilakisfil/.gvm/scripts/gvm" ]] && source "/home/vasilakisfil/.gvm/scripts/gvm"
+
+export ANDROID_HOME=/home/vasilakisfil/android/android-studio/
