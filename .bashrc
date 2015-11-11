@@ -125,3 +125,6 @@ eval "$(direnv hook bash)" #direnv
 [[ -s "/home/vasilakisfil/.gvm/scripts/gvm" ]] && source "/home/vasilakisfil/.gvm/scripts/gvm"
 
 export ANDROID_HOME=/home/vasilakisfil/Android/Sdk
+
+export PSQL_EDITOR="/usr/bin/vim.gtk"
+
