@@ -59,3 +59,5 @@ eval "$(direnv hook zsh)" #direnv
 export ANDROID_HOME=/home/vasilakisfil/Android/Sdk
 
 export PSQL_EDITOR="/usr/bin/vim.gtk"
+
+source ~/.git-flow-completion.zsh
