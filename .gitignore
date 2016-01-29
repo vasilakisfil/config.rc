@@ -11,3 +11,4 @@
 !vimCommands
 !.gemrc
 !.psqlrc
+!.git-flow-completion.zsh
