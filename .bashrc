@@ -128,3 +128,6 @@ export ANDROID_HOME=/home/vasilakisfil/Android/Sdk
 
 export PSQL_EDITOR="/usr/bin/vim.gtk"
 
+
+export NVM_DIR="/home/vasilakisfil/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
