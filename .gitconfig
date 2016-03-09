@@ -5,6 +5,7 @@
 	editor = vim
 [push]
 	default = current
+	followTags = true
 [giggle]
 	main-window-maximized = true
 	main-window-geometry = 700x550+0+476
