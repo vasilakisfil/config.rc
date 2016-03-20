@@ -35,6 +35,8 @@ Plugin 'fatih/vim-go'
 
 Plugin 'ekalinin/Dockerfile.vim'
 
+Plugin 'elzr/vim-json'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
