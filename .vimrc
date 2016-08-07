@@ -29,7 +29,7 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'mustache/vim-mustache-handlebars'
 
 Plugin 'scrooloose/syntastic'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 Plugin 'fatih/vim-go'
 
