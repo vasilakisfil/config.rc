@@ -130,7 +130,7 @@ set sidescroll=1
 
 
 " ================ ColorScheme ======================
-set background=light
+set background=dark
 colorscheme solarized
 
 
@@ -215,3 +215,12 @@ set novb
 
 let g:auto_save_in_insert_mode = 0
 let g:syntastic_javascript_checkers = ['jshint']
+
+"saving some space..
+:set go-=m  "remove menu bar
+:set go-=T  "remove toolbar
+:set go-=r  "remove right-hand scroll bar
+:set go-=L  "remove left-hand scroll bar
+:set guioptions-=e "make tabs ligher
+
+let g:NERDTreeWinSize=15
