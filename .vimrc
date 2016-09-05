@@ -197,8 +197,6 @@ imap <3-MiddleMouse> <Nop>
 map <4-MiddleMouse> <Nop>
 imap <4-MiddleMouse> <Nop>
 
-:set guioptions-=m  "remove menu bar #in gvim to enable use: set go-=T
-:set guioptions-=T  "remove toolbar #in gvim to enable use: set go-=m
 
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim  "ctrlP
@@ -216,11 +214,16 @@ set novb
 let g:auto_save_in_insert_mode = 0
 let g:syntastic_javascript_checkers = ['jshint']
 
-"saving some space..
+"saving some space.. go --> guioptions
 :set go-=m  "remove menu bar
 :set go-=T  "remove toolbar
 :set go-=r  "remove right-hand scroll bar
 :set go-=L  "remove left-hand scroll bar
-:set guioptions-=e "make tabs ligher
+:set go-=e "make tabs ligher
 
-let g:NERDTreeWinSize=15
+let g:NERDTreeWinSize=17
+
+:set guifont=Monospace\ 10
+
+"bind F5 to toggling colorscheme
+call togglebg#map("<F5>")
