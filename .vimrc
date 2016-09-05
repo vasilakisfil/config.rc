@@ -130,7 +130,7 @@ set sidescroll=1
 
 
 " ================ ColorScheme ======================
-set background=dark
+set background=light
 colorscheme solarized
 
 
@@ -221,9 +221,9 @@ let g:syntastic_javascript_checkers = ['jshint']
 :set go-=L  "remove left-hand scroll bar
 :set go-=e "make tabs ligher
 
-let g:NERDTreeWinSize=17
+let g:NERDTreeWinSize=20
 
 :set guifont=Monospace\ 10
 
 "bind F5 to toggling colorscheme
-call togglebg#map("<F5>")
+call togglebg#map("<F6>")
