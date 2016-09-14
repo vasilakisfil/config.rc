@@ -131,3 +131,6 @@ export PSQL_EDITOR="/usr/bin/vim.gtk"
 
 export NVM_DIR="/home/vasilakisfil/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+
+export PATH="$HOME/bin:$PATH" # Add local scripts

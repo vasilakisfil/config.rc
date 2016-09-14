@@ -63,3 +63,5 @@ export PSQL_EDITOR="/usr/bin/vim.gtk"
 source ~/.git-flow-completion.zsh
 
 PROMPT='${ret_status}%*%{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%}%{$reset_color%}'
+
+export PATH="$HOME/bin:$PATH" #Add local scripts
