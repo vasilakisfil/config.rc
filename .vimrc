@@ -226,4 +226,4 @@ let g:NERDTreeWinSize=20
 :set guifont=Monospace\ 10
 
 "bind F5 to toggling colorscheme
-call togglebg#map("<F6>")
+call togglebg#map("<F5>")
