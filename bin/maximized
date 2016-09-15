@@ -1,0 +1,6 @@
+#!/bin/bash
+
+maximus &
+$1
+killall maximus
+
