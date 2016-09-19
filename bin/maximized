@@ -1,6 +1,7 @@
 #!/bin/bash
 
+$1 &
 maximus &
-$1
+sleep 3
 killall maximus
 
