@@ -6,3 +6,16 @@ alias logout='sudo pkill -u $USER'
 alias log-out='sudo pkill -u $USER'
 
 alias g='git'
+
+#Rails related
+alias b='bundle exec'
+alias bi='bundle install'
+alias bs='bundle exec rails s'
+alias bc='bundle exec rails c' #ovewrites bc - An arbitrary precision calculator language
+
+#Ember related
+alias e='ember'
+alias es='ember s --live-reload=false'
+alias ember_clean='rm -rf node_modules bower_components dist tmp && npm cache clean && bower cache clean'
+alias ember_install='npm install && bower install'
+alias ember_reinstall='ember_clean && ember_install'
