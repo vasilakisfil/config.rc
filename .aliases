@@ -1,0 +1,8 @@
+# Universal Shell Aliases, should be included in both Bash and ZSH.
+alias mkdir='mkdir -p'
+alias grep='grep --color=always'
+alias diff='colordiff'
+alias logout='sudo pkill -u $USER'
+alias log-out='sudo pkill -u $USER'
+
+alias g='git'

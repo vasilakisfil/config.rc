@@ -134,3 +134,8 @@ export NVM_DIR="/home/vasilakisfil/.nvm"
 
 
 export PATH="$HOME/bin:$PATH" # Add local scripts
+
+#import aliases
+if [ -f ~/.aliases ]; then
+    . ~/.aliases
+fi
