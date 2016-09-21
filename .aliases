@@ -5,7 +5,9 @@ alias diff='colordiff'
 alias logout='sudo pkill -u $USER'
 alias log-out='sudo pkill -u $USER'
 
+#Development specific
 alias g='git'
+alias da='direnv allow'
 
 #Rails related
 alias b='bundle exec'
