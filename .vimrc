@@ -223,7 +223,11 @@ let g:syntastic_javascript_checkers = ['jshint']
 
 let g:NERDTreeWinSize=20
 
-:set guifont=Monospace\ 10
+if system("xrandr | grep '*' | cut -d ' ' -f 4 | cut -d 'x' -f 1") > 1900
+  :set guifont=Monospace\ 13
+else
+  :set guifont=Monospace\ 10
+endif
 
 "bind F5 to toggling colorscheme
 call togglebg#map("<F5>")
