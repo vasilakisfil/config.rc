@@ -13,7 +13,9 @@ alias da='direnv allow'
 alias b='bundle exec'
 alias bi='bundle install'
 alias bs='bundle exec rails s'
+alias brs=bs
 alias bc='bundle exec rails c' #ovewrites bc - An arbitrary precision calculator language
+alias brc=bc
 
 #Ember related
 alias e='ember'
