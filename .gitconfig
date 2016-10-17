@@ -12,4 +12,10 @@
 	history-view-vpane-position = 453
 	main-window-view = HistoryView
 	file-view-vpane-position = 205
-[heroku]
+[alias]
+  st = status --short --branch
+  co = checkout
+  wip = commit -am "wip"
+  wipa = '!git add . && git commit -am "wip"'
+  please = push --force-with-lease
+  grog = log --oneline --decorate --graph --all
