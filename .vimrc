@@ -231,3 +231,6 @@ endif
 
 "bind F5 to toggling colorscheme
 call togglebg#map("<F5>")
+
+nnoremap <F2> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+
