@@ -17,6 +17,7 @@ alias brc='bundle exec rails c' #ovewrites bc - An arbitrary precision calculato
 #Ember related
 alias e='ember'
 alias es='ember s --live-reload=false'
+alias les='node_modules/ember-cli/bin/ember s --live-reload=false'
 alias ember_clean='rm -rf node_modules bower_components dist tmp && npm cache clean && bower cache clean'
 alias ember_install='npm install && bower install'
 alias ember_reinstall='ember_clean && ember_install'

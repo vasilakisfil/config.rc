@@ -48,8 +48,12 @@ set history=1000                "Store lots of :cmdline history
 set showcmd                     "Show incomplete cmds down the bottom
 set showmode                    "Show current mode down the bottom
 set gcr=a:blinkon0              "Disable cursor blink
-set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
+"no bell and visual bell
+set noerrorbells visualbell t_vb=
+if has('autocmd')
+  autocmd GUIEnter * set visualbell t_vb=
+endif
 
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
