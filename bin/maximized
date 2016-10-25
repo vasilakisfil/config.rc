@@ -2,6 +2,6 @@
 
 $1 &
 maximus &
-sleep 3
+sleep 5
 killall maximus
 

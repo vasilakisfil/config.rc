@@ -10,6 +10,7 @@ alias g='git'
 alias da='direnv allow'
 
 #Rails related
+alias bi='bundle install'
 alias be='bundle exec'
 alias brs='bundle exec rails s'
 alias brc='bundle exec rails c' #ovewrites bc - An arbitrary precision calculator language
