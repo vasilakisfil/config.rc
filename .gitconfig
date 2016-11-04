@@ -1,6 +1,7 @@
 [user]
 	name = Filippos Vasilakis
-	email = vasilakisfil@gmail.com
+  email = vasilakisfil@gmail.com
+  signingKey = vasilakisfil@gmail.com
 [core]
 	editor = vim
 [push]
@@ -20,3 +21,5 @@
   please = push --force-with-lease
   grog = log --oneline --decorate --graph --all
   remend = commit -a --amend
+[commit]
+  gpgsign = true
