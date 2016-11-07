@@ -16,6 +16,7 @@ alias brs='bundle exec rails s'
 alias brc='bundle exec rails c' #ovewrites bc - An arbitrary precision calculator language
 
 #Ember related
+alias ember='node_modules/ember-cli/bin/ember'
 alias e='ember'
 alias es='ember s --live-reload=false'
 alias les='node_modules/ember-cli/bin/ember s --live-reload=false'
