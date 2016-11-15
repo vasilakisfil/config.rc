@@ -142,3 +142,12 @@ fi
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+export PATH="$HOME/.kerl/bin:$PATH" #Add kerl (erlang version manager)
+
+# Add elixir
+test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
+
+#Add crystal
+export PATH="$HOME/.crenv/bin:$PATH"
+eval "$(crenv init -)" #initialize crystal
