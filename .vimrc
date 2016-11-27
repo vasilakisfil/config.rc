@@ -37,6 +37,8 @@ Plugin 'ekalinin/Dockerfile.vim'
 
 Plugin 'elzr/vim-json'
 
+Plugin 'rhysd/vim-crystal'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
