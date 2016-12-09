@@ -39,6 +39,8 @@ Plugin 'elzr/vim-json'
 
 Plugin 'rhysd/vim-crystal'
 
+Plugin 'christoomey/vim-tmux-navigator'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -240,3 +242,8 @@ call togglebg#map("<F5>")
 
 nnoremap <F2> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
+"sane pane navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
