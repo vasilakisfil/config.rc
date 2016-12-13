@@ -77,3 +77,8 @@ export PATH="$HOME/.kerl/bin:$PATH" #Add kerl (erlang version manager)
 
 export PATH="$HOME/.crenv/bin:$PATH" #Add crystal
 eval "$(crenv init -)"
+
+
+setopt inc_append_history
+setopt hist_ignore_dups
+setopt hist_ignore_space
