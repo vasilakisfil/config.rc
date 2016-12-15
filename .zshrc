@@ -42,7 +42,8 @@ export PATH="/usr/local/heroku/bin:$PATH"
 setopt nocorrectall; setopt correct
 
 #256 colors
-export TERM='xterm-256color'
+export TERM=xterm-256color
+[ -n "$TMUX" ] && export TERM=screen-256color
 
 
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
@@ -63,7 +64,7 @@ export PSQL_EDITOR="/usr/bin/vim.gtk"
 source ~/.git-flow-completion.zsh
 
 NEWLINE=$'\n'
-PROMPT='${ret_status}%*%{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%}%{$reset_color%}${NEWLINE}>'
+PROMPT='${ret_status}%*%{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%}%{$reset_color%}${NEWLINE}%F{red}zsh>%{$reset_color%} '
 
 export PATH="$HOME/bin:$PATH" #Add local scripts
 
