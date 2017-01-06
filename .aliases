@@ -34,4 +34,4 @@ hist_alias() {
   echo "${history_var}"
 }
 
-alias hist=hist_alias
+alias his=hist_alias
