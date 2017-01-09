@@ -193,7 +193,7 @@ endfunction
 autocmd VimEnter * call StartUp()
 
 " Add 80 characters column highlight
-set colorcolumn=80
+let &colorcolumn="80,".join(range(120,999),",")
 
 " VERY IMPORTANT (disables mouse copy pastes :/)
 map <MiddleMouse> <Nop>
