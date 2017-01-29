@@ -18,7 +18,8 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'vim-scripts/proton'
 Plugin '907th/vim-auto-save'
 Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-markdown'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'tfnico/vim-gradle'
@@ -247,3 +248,9 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+"conceal [link text](link url) as just link text.
+set conceallevel=2
+"autocmd BufRead,BufNewFile   *.md setlocal tw=80
+"autocmd BufRead,BufNewFile   *.md setlocal fo+=a
+
