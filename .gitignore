@@ -13,7 +13,11 @@
 !.gemrc
 !.psqlrc
 !.git-flow-completion.zsh
+
 !/bin/
+/bin/ngrok
+
 !.xbindkeysrc
 !.aliases
 !.rspec
+
