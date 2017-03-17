@@ -139,7 +139,7 @@ set sidescroll=1
 
 
 " ================ ColorScheme ======================
-set background=dark
+set background=light
 colorscheme solarized
 
 
