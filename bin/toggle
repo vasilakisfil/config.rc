@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+dark='#00002B2B3636'
+dir=`dirname $0`
+
+current=$(gconftool-2 -g /apps/guake/style/background/color)
+
+if [ $current = $dark ]
+then
+  ~/Development/Tools/guake-colors-solarized/set_light.sh
+else
+  ~/Development/Tools/guake-colors-solarized/set_dark.sh
+fi
