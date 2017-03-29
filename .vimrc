@@ -139,8 +139,16 @@ set sidescroll=1
 
 
 " ================ ColorScheme ======================
-set background=light
-colorscheme solarized
+let background_color=system('gconftool-2 -g /apps/guake/style/background/color')
+
+if substitute(background_color, '\n\+$', '', '') == "#00002B2B3636"
+  set background=dark
+  colorscheme solarized
+else
+  set background=light
+  colorscheme solarized
+endif
+
 
 
 " ================ Other Stuff ======================
