@@ -70,6 +70,5 @@
 ##################################
 
 #guake solarized toggle
-"t"
-    m:0xc + c:14
-    Control+Alt + 5
+"~/bin/toggle"
+    Control+Alt + 6
