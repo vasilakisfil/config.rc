@@ -36,3 +36,4 @@ hist_alias() {
 
 alias his=hist_alias
 alias t=toggle
+alias termall=killall -15
