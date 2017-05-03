@@ -232,6 +232,7 @@ set novb
 
 let g:auto_save_in_insert_mode = 0
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
 
 "saving some space.. go --> guioptions
 :set go-=m  "remove menu bar
