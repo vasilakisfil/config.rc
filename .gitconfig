@@ -21,5 +21,6 @@
   please = push --force-with-lease
   grog = log --oneline --decorate --graph --all
   remend = commit -a --amend
+  count = rev-list --count master
 [commit]
   gpgsign = true
