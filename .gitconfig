@@ -22,5 +22,6 @@
   grog = log --oneline --decorate --graph --all
   remend = commit -a --amend
   count = rev-list --count master
+  ri=rebase -i origin/master
 [commit]
   gpgsign = true
