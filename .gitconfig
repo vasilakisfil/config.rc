@@ -23,5 +23,6 @@
   remend = commit -a --amend
   count = rev-list --count master
   ri=rebase -i origin/master
+  branches=branch --sort=committerdate
 [commit]
   gpgsign = true
