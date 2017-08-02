@@ -151,3 +151,6 @@ test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
 #Add crystal
 export PATH="$HOME/.crenv/bin:$PATH"
 eval "$(crenv init -)" #initialize crystal
+
+# needed for go packages
+export GOPATH=$HOME/go

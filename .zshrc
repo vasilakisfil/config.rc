@@ -84,3 +84,6 @@ eval "$(crenv init -)"
 setopt inc_append_history
 setopt hist_ignore_dups
 setopt hist_ignore_space
+
+# needed for go packages
+export GOPATH=$HOME/go
