@@ -41,6 +41,7 @@ Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'elzr/vim-json'
 
 Plugin 'rhysd/vim-crystal'
+Plugin 'elixir-editors/vim-elixir'
 
 Plugin 'christoomey/vim-tmux-navigator'
 
