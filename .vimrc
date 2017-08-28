@@ -43,6 +43,8 @@ Plugin 'elzr/vim-json'
 Plugin 'rhysd/vim-crystal'
 Plugin 'elixir-editors/vim-elixir'
 
+Plugin 'leafgarland/typescript-vim'
+
 Plugin 'christoomey/vim-tmux-navigator'
 
 call vundle#end()            " required
