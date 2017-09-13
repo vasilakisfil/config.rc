@@ -20,6 +20,7 @@
 /bin/wrk
 /bin/hercules
 /bin/ngrok
+/bin/swaks
 
 !.xbindkeysrc
 !.aliases
