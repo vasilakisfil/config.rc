@@ -4,6 +4,7 @@ alias grep='grep --color=always'
 alias diff='colordiff'
 alias logout='sudo pkill -u $USER'
 alias log-out='sudo pkill -u $USER'
+alias nocolors='sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g"'
 
 #Development specific
 alias g='git'

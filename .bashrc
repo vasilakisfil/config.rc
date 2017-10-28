@@ -154,3 +154,5 @@ eval "$(crenv init -)" #initialize crystal
 
 # needed for go packages
 export GOPATH=$HOME/go
+
+source ~/.tools/bashmarks.sh

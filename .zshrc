@@ -87,3 +87,5 @@ setopt hist_ignore_space
 
 # needed for go packages
 export GOPATH=$HOME/go
+
+source ~/.tools/bashmarks.sh

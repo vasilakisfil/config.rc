@@ -1,0 +1,2 @@
+export DIR_embernews="$HOME/Development/embernews/embernews-rails"
+export DIR_foo="$HOME/Development/Tools/bashmarks"
