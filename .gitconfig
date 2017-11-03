@@ -25,5 +25,6 @@
   count = rev-list --count master
   ri=rebase -i origin/master
   branches=branch --sort=committerdate
+  dl= diff --name-only
 [commit]
   gpgsign = true
