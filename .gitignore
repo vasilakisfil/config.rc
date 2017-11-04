@@ -22,4 +22,5 @@
 !.tmux.conf
 !.tools/
 !.local/bin/
+!.githooks
 

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+branch=$(git symbolic-ref HEAD)
+if [[ $branch =~ ^"refs/heads/local" ]]; then
+  printf "\033[31mBranch is blocked from pushing, will stay only local instead ^_^\033[0m\n\n"
+  exit -1
+fi

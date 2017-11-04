@@ -4,7 +4,8 @@
   signingKey = vasilakisfil@gmail.com
 [core]
 	editor = vim
-	pager = diff-so-fancy | less --tabs=4 -RFX
+  pager = diff-so-fancy | less --tabs=4 -RFX
+  hooksPath = /home/vasilakisfil/.githooks/
 [push]
 	default = current
 	followTags = true
