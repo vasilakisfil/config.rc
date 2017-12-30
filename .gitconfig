@@ -26,6 +26,7 @@
   count = rev-list --count master
   ri=rebase -i origin/master
   branches=branch --sort=committerdate
-  dl= diff --name-only
+  dl= diff --name-only #I need to find a way to list them as shown in git status
+  shoot= push origin --delete
 [commit]
   gpgsign = true
