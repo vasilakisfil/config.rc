@@ -89,3 +89,21 @@ setopt hist_ignore_space
 export GOPATH=$HOME/go
 
 source ~/.tools/bashmarks.sh
+
+export CURRENT_PROJECT_PATH=$HOME/.current-project
+
+function chpwd {
+ if [ -e ".guakerc" ]; then
+   setupguake
+ else
+    guake -r ${PWD##*/}
+ fi
+}
+
+function setupguake() {
+  . $(pwd)/.guakerc
+
+  if ((${+name})); then
+    guake -r ${name}
+  fi
+}
