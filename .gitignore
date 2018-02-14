@@ -23,4 +23,4 @@
 !.tools/
 !.local/bin/
 !.githooks
-
+!.gitignore_global
