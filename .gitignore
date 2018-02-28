@@ -15,6 +15,7 @@
 !.git-flow-completion.zsh
 
 !/bin/
+/bin/chrome
 
 !.xbindkeysrc
 !.aliases
