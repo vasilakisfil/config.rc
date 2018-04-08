@@ -107,3 +107,9 @@ function setupguake() {
     guake -r ${name}
   fi
 }
+
+#allow iex to remember history
+export ERL_AFLAGS="-kernel shell_history enabled"
+
+#fix android studio lib issues
+export ANDROID_EMULATOR_USE_SYSTEM_LIBS=1
