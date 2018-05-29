@@ -156,3 +156,5 @@ eval "$(crenv init -)" #initialize crystal
 export GOPATH=$HOME/go
 
 source ~/.tools/bashmarks.sh
+
+[ -s "/home/vasilakisfil/.jabba/jabba.sh" ] && source "/home/vasilakisfil/.jabba/jabba.sh"
