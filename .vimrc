@@ -271,3 +271,7 @@ set conceallevel=2
 "stupid warning
 let g:syntastic_eruby_ruby_quiet_messages =
     \ {'regex': 'possibly useless use of a variable in void context'}
+
+"navigate through copen using ctrl-j and ctrl-k
+map <C-j> :cn<CR>
+map <C-k> :cp<CR>
