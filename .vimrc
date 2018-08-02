@@ -275,3 +275,5 @@ let g:syntastic_eruby_ruby_quiet_messages =
 "navigate through copen using ctrl-j and ctrl-k
 map <M-j> :cn<CR>
 map <M-k> :cp<CR>
+
+:set term=xterm-256color
