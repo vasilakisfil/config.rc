@@ -278,3 +278,5 @@ map <M-j> :cn<CR>
 map <M-k> :cp<CR>
 
 :set term=xterm-256color
+let NERDTreeIgnore = ['\.beam']
+
