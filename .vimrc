@@ -31,7 +31,8 @@ Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'mxw/vim-jsx'
 
 
-Plugin 'scrooloose/syntastic'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'mtscout6/syntastic-local-eslint.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 
 Plugin 'fatih/vim-go'
@@ -235,8 +236,13 @@ set t_Co=256 "enabe 256 colors in vim
 set novb
 
 let g:auto_save_in_insert_mode = 0
+let g:syntastic_mode_map = {
+    \ "mode": "active",
+    \ "passive_filetypes": ["javascript"] }
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
+nmap <C-M-Z> :SyntasticCheck<CR>
+
 
 "saving some space.. go --> guioptions
 :set go-=m  "remove menu bar
@@ -280,3 +286,4 @@ map <M-k> :cp<CR>
 :set term=xterm-256color
 let NERDTreeIgnore = ['\.beam']
 
+:set wildignore+=node_modules/**/*
