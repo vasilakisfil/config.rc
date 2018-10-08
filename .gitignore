@@ -26,3 +26,6 @@
 !.githooks
 !.gitignore_global
 !.startup.sh
+
+/.nvm/*
+!/.nvm/default-packages
