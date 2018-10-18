@@ -33,4 +33,4 @@
   #why git doesn't have some nice defaults? :/
   fuckoff="!f(){ git branch --set-upstream-to=origin/$(git branch-name); }; f"
 [commit]
-  gpgsign = true
+  #gpgsign = true
