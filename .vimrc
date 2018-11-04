@@ -54,7 +54,7 @@ filetype plugin indent on    " required
 " ================ General Config ====================
 " sets:
 " - skin
-source .vimrc_config
+source ~/.vimrc_config
 
 set number                      "Line numbers are good
 "set backspace=indent,eol,start  "Allow backspace in insert mode
