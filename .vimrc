@@ -288,3 +288,6 @@ let NERDTreeIgnore = ['\.beam']
 
 :set wildignore+=node_modules/**/*
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
+"enable jsx in both .js and .jsx files
+let g:jsx_ext_required = 0
