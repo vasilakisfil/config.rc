@@ -32,5 +32,6 @@
   branch-name=symbolic-ref --short HEAD
   #why git doesn't have some nice defaults? :/
   fuckoff="!f(){ git branch --set-upstream-to=origin/$(git branch-name); }; f"
+  repush="!f(){ git fetch && git rebase origin/master && git push; }; f"
 [commit]
   #gpgsign = true
