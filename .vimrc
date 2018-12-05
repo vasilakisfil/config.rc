@@ -291,3 +291,9 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 
 "enable jsx in both .js and .jsx files
 let g:jsx_ext_required = 0
+
+"the working directory is always the one where the active buffer is located.
+set autochdir
+"make sure the working directory is set correctly when changing folders from
+"NERDTree
+let NERDTreeChDirMode=2
