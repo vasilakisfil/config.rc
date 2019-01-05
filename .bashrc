@@ -143,12 +143,11 @@ fi
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-export PATH="$HOME/.kerl/bin:$PATH" #Add kerl (erlang version manager)
+#add elixir, erlang etc
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
 
-# Add elixir
-test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
-
-#Add crystal
+#Add crystal TODO: Remove that and use asdf
 export PATH="$HOME/.crenv/bin:$PATH"
 eval "$(crenv init -)" #initialize crystal
 

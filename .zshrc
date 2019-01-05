@@ -72,12 +72,10 @@ export PATH="$HOME/bin:$PATH" #Add local scripts
 #import aliases
 source $HOME/.aliases
 
-# Add elixir
-test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
 
-export PATH="$HOME/.kerl/bin:$PATH" #Add kerl (erlang version manager)
-
-export PATH="$HOME/.crenv/bin:$PATH" #Add crystal
+export PATH="$HOME/.crenv/bin:$PATH" #Add crystal, TODO: Remove that and use asdf!
 eval "$(crenv init -)"
 
 
