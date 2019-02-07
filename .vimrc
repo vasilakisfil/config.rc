@@ -42,7 +42,9 @@ Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'elzr/vim-json'
 
 Plugin 'rhysd/vim-crystal'
+
 Plugin 'elixir-editors/vim-elixir'
+Plugin 'slashmili/alchemist.vim'
 
 Plugin 'leafgarland/typescript-vim'
 
@@ -242,7 +244,6 @@ let g:syntastic_mode_map = {
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
 nmap <C-M-Z> :SyntasticCheck<CR>
-
 
 "saving some space.. go --> guioptions
 :set go-=m  "remove menu bar
