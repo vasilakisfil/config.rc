@@ -26,6 +26,7 @@
 !.githooks
 !.gitignore_global
 !.startup.sh
+!.vimrc_config
 
 /.nvm/*
 !/.nvm/default-packages
