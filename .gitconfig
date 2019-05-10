@@ -26,7 +26,7 @@
   remend = commit -a --amend --date=now
   count = rev-list --count master
   ri=rebase -i origin/master
-  branches=branch --sort=committerdate
+  branches = "!f() { git for-each-ref --sort=committerdate refs/$1 --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'; }; f"
   dl= diff --name-only #I need to find a way to list them as shown in git status
   shoot= push origin --delete
   branch-name=symbolic-ref --short HEAD
@@ -34,5 +34,8 @@
   fuckoff="!f(){ git branch --set-upstream-to=origin/$(git branch-name); }; f"
   repush="!f(){ git fetch && git rebase origin/master && git push; }; f"
   cleanup="!f(){ git branch --merged | egrep -v '(^\\*|master|dev)' | xargs git branch -d;}; f"
+  lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(normal)%s%C(reset) %C(dim normal)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+  lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(normal)%s%C(reset) %C(dim normal)- %an%C(reset)' --all
+  lg = !"git lg1"
 [commit]
   #gpgsign = true
