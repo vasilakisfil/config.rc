@@ -113,3 +113,5 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 export ANDROID_EMULATOR_USE_SYSTEM_LIBS=1
 
 [ -s "/home/vasilakisfil/.jabba/jabba.sh" ] && source "/home/vasilakisfil/.jabba/jabba.sh"
+
+export PATH="$HOME/.cargo/env:$PATH"

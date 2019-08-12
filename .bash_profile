@@ -11,3 +11,5 @@ export TERM="xterm-256color"
 export NVM_DIR="/home/vasilakisfil/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "/home/vasilakisfil/.jabba/jabba.sh" ] && source "/home/vasilakisfil/.jabba/jabba.sh"
+
+export PATH="$HOME/.cargo/bin:$PATH"
