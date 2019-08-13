@@ -115,3 +115,19 @@ export ANDROID_EMULATOR_USE_SYSTEM_LIBS=1
 [ -s "/home/vasilakisfil/.jabba/jabba.sh" ] && source "/home/vasilakisfil/.jabba/jabba.sh"
 
 export PATH="$HOME/.cargo/env:$PATH"
+
+function git_wrapper() {
+  for arg in "$@"; do
+    if [ "$arg" = "push" ]; then
+      ispush=1
+    elif [ "$ispush" = 1 -a "$arg" = '-f' ]; then
+      echo "Force pushed disabled. Use this instead: git push --force-with-lease (or git pushf)"
+      return
+    fi
+  done
+
+  git "$@"
+}
+
+alias git=git_wrapper
+
