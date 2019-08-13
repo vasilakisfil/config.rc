@@ -255,7 +255,7 @@ nmap <C-M-Z> :SyntasticCheck<CR>
 let g:NERDTreeWinSize=20
 
 if system("xrandr | grep '*' | cut -d ' ' -f 4 | cut -d 'x' -f 1") > 1900
-  :set guifont=Monospace\ 13
+  :set guifont=Monospace\ 12
 else
   :set guifont=Monospace\ 10
 endif
