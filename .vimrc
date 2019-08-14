@@ -50,6 +50,13 @@ Plugin 'leafgarland/typescript-vim'
 
 Plugin 'christoomey/vim-tmux-navigator'
 
+Plugin 'rust-lang/rust.vim'
+
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
+Plugin 'ycm-core/YouCompleteMe'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -298,3 +305,7 @@ let g:jsx_ext_required = 0
 "make sure the working directory is set correctly when changing folders from
 "NERDTree
 "let NERDTreeChDirMode=2
+
+let g:syntastic_rust_checkers = []
+let g:airline_theme='light'
+
