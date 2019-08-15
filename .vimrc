@@ -219,6 +219,9 @@ autocmd VimEnter * call StartUp()
 
 " Add 80 characters column highlight
 let &colorcolumn="80,".join(range(120,999),",")
+augroup rust
+    autocmd FileType rust set colorcolumn=100
+augroup END
 
 " VERY IMPORTANT (disables mouse copy pastes :/)
 map <MiddleMouse> <Nop>
