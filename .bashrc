@@ -157,3 +157,6 @@ export GOPATH=$HOME/go
 source ~/.tools/bashmarks.sh
 
 [ -s "/home/vasilakisfil/.jabba/jabba.sh" ] && source "/home/vasilakisfil/.jabba/jabba.sh"
+
+export BAT_THEME="Monokai Extended Light"
+

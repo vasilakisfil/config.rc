@@ -306,6 +306,11 @@ let g:jsx_ext_required = 0
 "NERDTree
 "let NERDTreeChDirMode=2
 
+"don't use rust checker for syntastic
 let g:syntastic_rust_checkers = []
+"don't show autocomplete preview window
+let g:ycm_add_preview_to_completeopt=0
+set completeopt-=preview
+
 let g:airline_theme='light'
 

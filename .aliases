@@ -40,3 +40,5 @@ alias t=toggle
 alias termall=killall -15
 
 alias svim="sudo -E vim"
+
+alias cat=bat
