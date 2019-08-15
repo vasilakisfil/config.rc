@@ -221,6 +221,9 @@ autocmd VimEnter * call StartUp()
 let &colorcolumn="80,".join(range(120,999),",")
 augroup rust
     autocmd FileType rust set colorcolumn=100
+    set shiftwidth=4
+    set softtabstop=4
+    set tabstop=4
 augroup END
 
 " VERY IMPORTANT (disables mouse copy pastes :/)
