@@ -10,7 +10,7 @@ call vundle#begin()
 " required!
 Plugin 'gmarik/vundle.vim'
 
-
+Plugin 'ycm-core/YouCompleteMe'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-haml'
 Plugin 'slim-template/vim-slim'
@@ -54,8 +54,6 @@ Plugin 'rust-lang/rust.vim'
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-
-Plugin 'ycm-core/YouCompleteMe'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -256,7 +254,7 @@ let g:syntastic_mode_map = {
     \ "passive_filetypes": ["javascript"] }
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
-nmap <C-M-Z> :SyntasticCheck<CR>
+"nmap <C-M-Z> :SyntasticCheck<CR> "not used so we have mapped that to RustFmt
 
 "saving some space.. go --> guioptions
 :set go-=m  "remove menu bar
@@ -313,10 +311,12 @@ let g:jsx_ext_required = 0
 "let NERDTreeChDirMode=2
 
 "don't use rust checker for syntastic
-let g:syntastic_rust_checkers = ['rustc']
+let g:syntastic_rust_checkers = ['cargo rustc']
 "don't show autocomplete preview window
-let g:ycm_add_preview_to_completeopt=0
-set completeopt-=preview
+"let g:ycm_add_preview_to_completeopt=0
+"set completeopt-=preview
+let g:loaded_youcompleteme = 1
+nmap <C-M-Z> :RustFmt<CR>
 
 let g:airline_theme='light'
 
