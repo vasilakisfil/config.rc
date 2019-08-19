@@ -294,6 +294,8 @@ let g:syntastic_eruby_ruby_quiet_messages =
 "navigate through copen using meta-j and meta-k
 map <M-j> :cn<CR>
 map <M-k> :cp<CR>
+"open using meta-o
+map <M-o> :copen<CR>
 
 :set term=xterm-256color
 let NERDTreeIgnore = ['\.beam']
@@ -316,7 +318,8 @@ let g:syntastic_rust_checkers = ['cargo rustc']
 "let g:ycm_add_preview_to_completeopt=0
 "set completeopt-=preview
 let g:loaded_youcompleteme = 1
-nmap <C-M-Z> :RustFmt<CR>
+
+"essentially ctrl can also be part of it mapping to Kate/latex favorite shortcut
+nmap <M-lt> :RustFmt<CR>
 
 let g:airline_theme='light'
-
