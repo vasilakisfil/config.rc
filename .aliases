@@ -42,3 +42,4 @@ alias termall=killall -15
 alias svim="sudo -E vim"
 
 alias cat=bat
+alias batt="upower -i /org/freedesktop/UPower/devices/battery_BAT0"
