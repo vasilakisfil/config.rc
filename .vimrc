@@ -266,7 +266,7 @@ let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
 let g:NERDTreeWinSize=20
 
 if system("xrandr | grep '*' | cut -d ' ' -f 4 | cut -d 'x' -f 1") > 1900
-  :set guifont=Monospace\ 12
+  :set guifont=Monospace\ 14
 else
   :set guifont=Monospace\ 10
 endif
@@ -323,3 +323,26 @@ let g:loaded_youcompleteme = 1
 nmap <M-lt> :RustFmt<CR>
 
 let g:airline_theme='light'
+
+"font shortcuts..
+let s:pattern = '^\(.* \)\([1-9][0-9]*\)$'
+function! SetFontSize(newsize)
+  if has("gui_running")
+    let fontname = substitute(&guifont, s:pattern, '\1', '')
+    let newfont = fontname . a:newsize
+    let &guifont = newfont
+  else
+    echoerr "You need to run the GTK2 version of Vim to use this function."
+  endif
+  set guioptions+=b
+  set guioptions-=b
+endfunction
+function! IncreaseFont(amount)
+  let cursize = substitute(&guifont, s:pattern, '\2', '')
+  SetFontSize(cursize + 1)
+endfunction
+function! DecreaseFont(amount)
+  let cursize = substitute(&guifont, s:pattern, '\2', '')
+  SetFontSize(cursize + 1)
+endfunction
+command! -nargs=1 F call SetFontSize(<f-args>)
