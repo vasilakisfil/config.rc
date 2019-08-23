@@ -30,3 +30,7 @@
 
 /.nvm/*
 !/.nvm/default-packages
+
+!/.config/
+/.config/*
+!/.config/devilspie2

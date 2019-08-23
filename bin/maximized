@@ -1,7 +1,0 @@
-#!/bin/bash
-
-$1 &
-maximus &
-sleep 2
-killall maximus
-
