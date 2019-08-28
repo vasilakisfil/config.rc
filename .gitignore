@@ -25,7 +25,6 @@
 !.local/bin/
 !.githooks
 !.gitignore_global
-!.startup.sh
 !.vimrc_config
 
 /.nvm/*
@@ -34,3 +33,6 @@
 !/.config/
 /.config/*
 !/.config/devilspie2
+
+
+!/.scripts/
