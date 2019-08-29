@@ -265,11 +265,7 @@ let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
 
 let g:NERDTreeWinSize=20
 
-if system("xrandr | grep '*' | cut -d ' ' -f 4 | cut -d 'x' -f 1") > 1900
-  :set guifont=Monospace\ 14
-else
-  :set guifont=Monospace\ 10
-endif
+:set guifont=Monospace\ 12
 
 "bind F5 to toggling colorscheme
 call togglebg#map("<F6>")
