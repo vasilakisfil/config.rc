@@ -218,6 +218,7 @@ autocmd VimEnter * call StartUp()
 " Add 80 characters column highlight
 let &colorcolumn="80,".join(range(120,999),",")
 augroup rust
+    autocmd!
     autocmd FileType rust set colorcolumn=100
     set shiftwidth=4
     set softtabstop=4
