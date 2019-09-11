@@ -129,7 +129,7 @@ function git_wrapper() {
   git "$@"
 }
 
-alias git=git_wrapper
+#alias git=git_wrapper
 
 export BAT_THEME="Monokai Extended Light"
 
