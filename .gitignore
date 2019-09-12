@@ -17,6 +17,7 @@
 !/bin/
 /bin/chrome
 /bin/rebar3
+/bin/wrk
 
 !.xbindkeysrc
 !.aliases
