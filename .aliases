@@ -46,3 +46,7 @@ alias batt="upower -i /org/freedesktop/UPower/devices/battery_BAT0"
 alias sh!="shutdown now"
 alias cb="cargo build"
 alias cr="cargo run"
+n() {
+  dir=${1:-.}
+  nautilus $dir
+}
