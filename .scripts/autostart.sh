@@ -1,2 +1,2 @@
 #!/bin/bash
-./tmux_lang_listener.sh &
+~/.scripts/tmux_lang_listener.sh &
