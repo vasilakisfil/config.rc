@@ -33,9 +33,6 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'mxw/vim-jsx'
 
-
-Plugin 'vim-syntastic/syntastic'
-Plugin 'mtscout6/syntastic-local-eslint.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 
 Plugin 'fatih/vim-go'
@@ -254,12 +251,6 @@ set t_Co=256 "enabe 256 colors in vim
 set novb
 
 let g:auto_save_in_insert_mode = 0
-let g:syntastic_mode_map = {
-    \ "mode": "active",
-    \ "passive_filetypes": ["javascript"] }
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
-"nmap <C-M-Z> :SyntasticCheck<CR> "not used so we have mapped that to RustFmt
 
 "saving some space.. go --> guioptions
 :set go-=m  "remove menu bar
@@ -288,10 +279,6 @@ set conceallevel=2
 "autocmd BufRead,BufNewFile   *.md setlocal tw=80
 "autocmd BufRead,BufNewFile   *.md setlocal fo+=a
 
-"stupid warning
-let g:syntastic_eruby_ruby_quiet_messages =
-    \ {'regex': 'possibly useless use of a variable in void context'}
-
 "navigate through copen using meta-j and meta-k
 map <M-j> :cn<CR>
 map <M-k> :cp<CR>
@@ -312,13 +299,6 @@ let g:jsx_ext_required = 0
 "make sure the working directory is set correctly when changing folders from
 "NERDTree
 "let NERDTreeChDirMode=2
-
-"don't use rust checker for syntastic
-"let g:syntastic_rust_checkers = ['cargo rustc']
-"don't show autocomplete preview window
-"let g:ycm_add_preview_to_completeopt=1
-"set completeopt-=preview
-"let g:loaded_youcompleteme = 1
 
 "ALE linting stuff
 let g:ale_lint_on_text_changed = 'never'
@@ -354,3 +334,8 @@ function! DecreaseFont(amount)
   SetFontSize(cursize + 1)
 endfunction
 command! -nargs=1 F call SetFontSize(<f-args>)
+
+"jesus just jesus, why on earth...
+:let g:ycm_enable_diagnostic_highlighting = 0 
+:let g:ycm_show_diagnostics_ui = 0
+:let g:ycm_enable_diagnostic_signs = 0
