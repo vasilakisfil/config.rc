@@ -11,6 +11,7 @@ call vundle#begin()
 Plugin 'gmarik/vundle.vim'
 
 Plugin 'ycm-core/YouCompleteMe'
+Plugin 'dense-analysis/ale'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-haml'
 Plugin 'slim-template/vim-slim'
@@ -21,6 +22,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-vinegar'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'tfnico/vim-gradle'
 Plugin 'vitalk/vim-shebang'
@@ -312,11 +314,18 @@ let g:jsx_ext_required = 0
 "let NERDTreeChDirMode=2
 
 "don't use rust checker for syntastic
-let g:syntastic_rust_checkers = ['cargo rustc']
+"let g:syntastic_rust_checkers = ['cargo rustc']
 "don't show autocomplete preview window
-"let g:ycm_add_preview_to_completeopt=0
+"let g:ycm_add_preview_to_completeopt=1
 "set completeopt-=preview
-let g:loaded_youcompleteme = 1
+"let g:loaded_youcompleteme = 1
+
+"ALE linting stuff
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_save = 0
+let g:ale_lint_on_filetype_changed = 0
 
 "essentially ctrl can also be part of it mapping to Kate/latex favorite shortcut
 nmap <M-lt> :RustFmt<CR>
