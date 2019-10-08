@@ -339,3 +339,17 @@ command! -nargs=1 F call SetFontSize(<f-args>)
 :let g:ycm_enable_diagnostic_highlighting = 0 
 :let g:ycm_show_diagnostics_ui = 0
 :let g:ycm_enable_diagnostic_signs = 0
+
+
+fun! s:polite_sub(search, replace)
+    execute ':%s/' . a:search . '/' . a:replace . '/gc'
+endfun
+:command -nargs=+ Replace call s:polite_sub(<f-args>)
+:command Picks call s:polite_sub("pick", "s")
+:command -nargs=+ Repl call s:polite_sub(<f-args>)
+
+fun! s:global_search(term, ...)
+    let l:type = get(a:, 1, expand('%:e'))
+    execute ':grep -F "' . a:term . '" **/*.' . l:type
+endfun
+:command -nargs=+ S call s:global_search(<f-args>)
