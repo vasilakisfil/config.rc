@@ -344,7 +344,6 @@ command! -nargs=1 F call SetFontSize(<f-args>)
 fun! s:polite_sub(search, replace)
     execute ':%s/' . a:search . '/' . a:replace . '/gc'
 endfun
-:command -nargs=+ Replace call s:polite_sub(<f-args>)
 :command Picks call s:polite_sub("pick", "s")
 :command -nargs=+ Repl call s:polite_sub(<f-args>)
 
