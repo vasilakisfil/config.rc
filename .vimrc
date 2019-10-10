@@ -207,7 +207,7 @@ nnoremap <C-Right>   :tabnext<CR>
 map <F9> :call TabMove(-1)<CR>
 map <F10> :call TabMove(1)<CR>
 
-" Open NERDTree on vim startup (only when there is no file on the cli
+" Open NERDTree on vim startup (only when there is no file on the cli)
 function! StartUp()
     if 0 == argc()
         NERDTree
@@ -218,6 +218,7 @@ autocmd VimEnter * call StartUp()
 
 " Add 80 characters column highlight
 let &colorcolumn="80,".join(range(120,999),",")
+"unless it's rust
 augroup rust
     autocmd!
     autocmd FileType rust set colorcolumn=100
@@ -235,7 +236,6 @@ map <3-MiddleMouse> <Nop>
 imap <3-MiddleMouse> <Nop>
 map <4-MiddleMouse> <Nop>
 imap <4-MiddleMouse> <Nop>
-
 
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim  "ctrlP
@@ -340,7 +340,7 @@ command! -nargs=1 F call SetFontSize(<f-args>)
 :let g:ycm_show_diagnostics_ui = 0
 :let g:ycm_enable_diagnostic_signs = 0
 
-
+"some common patterns extracted as shortcuts
 fun! s:polite_sub(search, replace)
     execute ':%s/' . a:search . '/' . a:replace . '/gc'
 endfun
@@ -352,3 +352,7 @@ fun! s:global_search(term, ...)
     execute ':grep -F "' . a:term . '" **/*.' . l:type
 endfun
 :command -nargs=+ S call s:global_search(<f-args>)
+
+"buffers management
+nnoremap <M-e> :ls<cr>:b
+nnoremap <BS> <C-^>
