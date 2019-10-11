@@ -27,10 +27,11 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'tfnico/vim-gradle'
 Plugin 'vitalk/vim-shebang'
 
-"Plugin 'jelera/vim-javascript-syntax'
+Plugin 'jelera/vim-javascript-syntax'
 Plugin 'pangloss/vim-javascript'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'mustache/vim-mustache-handlebars'
+"Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'joukevandermaas/vim-ember-hbs'
 Plugin 'mxw/vim-jsx'
 
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -45,8 +46,6 @@ Plugin 'rhysd/vim-crystal'
 
 Plugin 'elixir-editors/vim-elixir'
 Plugin 'slashmili/alchemist.vim'
-
-Plugin 'leafgarland/typescript-vim'
 
 Plugin 'christoomey/vim-tmux-navigator'
 
@@ -219,13 +218,7 @@ autocmd VimEnter * call StartUp()
 " Add 80 characters column highlight
 let &colorcolumn="80,".join(range(120,999),",")
 "unless it's rust
-augroup rust
-    autocmd!
-    autocmd FileType rust set colorcolumn=100
-    set shiftwidth=4
-    set softtabstop=4
-    set tabstop=4
-augroup END
+autocmd FileType rust setlocal colorcolumn=100 shiftwidth=4 softtabstop=4 tabstop=4
 
 " VERY IMPORTANT (disables mouse copy pastes :/)
 map <MiddleMouse> <Nop>

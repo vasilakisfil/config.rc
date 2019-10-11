@@ -44,8 +44,8 @@ alias svim="sudo -E vim"
 alias cat=bat
 alias batt="upower -i /org/freedesktop/UPower/devices/battery_BAT0"
 alias sh!="shutdown now"
-alias cb="cargo build --color=always 2>&1 | less -RXEK"
-alias cr="cargo run"
+alias cb="clear && cargo build --color=always 2>&1 | less -RXEK"
+alias run="cargo run"
 n() {
   dir=${1:-.}
   nautilus $dir
