@@ -45,7 +45,6 @@ alias cat=bat
 alias batt="upower -i /org/freedesktop/UPower/devices/battery_BAT0"
 alias sh!="shutdown now"
 alias cb="clear && cargo build --color=always 2>&1 | less -RXEK"
-alias test="clear && cargo test --color=always -- --test-threads=1 2>&1 | less -RXEK"
 alias run="cargo run"
 n() {
   dir=${1:-.}
