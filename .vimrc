@@ -334,8 +334,9 @@ command! -nargs=1 F call SetFontSize(<f-args>)
 :let g:ycm_enable_diagnostic_signs = 0
 
 "some common patterns extracted as shortcuts
-fun! s:polite_sub(search, replace)
-    execute ':%s/' . a:search . '/' . a:replace . '/gc'
+fun! s:polite_sub(search, ...)
+    let l:replace = get(a:, 1, '')
+    execute ':%s/' . a:search . '/' . l:replace . '/gc'
 endfun
 :command Picks call s:polite_sub("pick", "s")
 :command -nargs=+ Repl call s:polite_sub(<f-args>)
