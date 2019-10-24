@@ -27,7 +27,6 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'tfnico/vim-gradle'
 Plugin 'vitalk/vim-shebang'
 
-Plugin 'jelera/vim-javascript-syntax'
 Plugin 'pangloss/vim-javascript'
 Plugin 'nathanaelkane/vim-indent-guides'
 "Plugin 'mustache/vim-mustache-handlebars'
@@ -284,8 +283,8 @@ let NERDTreeIgnore = ['\.beam']
 :set wildignore+=node_modules/**/*
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
-"enable jsx in both .js and .jsx files
-let g:jsx_ext_required = 0
+"enable jsx only in .jsx files
+let g:jsx_ext_required = 1
 
 "the working directory is always the one where the active buffer is located.
 "set autochdir
