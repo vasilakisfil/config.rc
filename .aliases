@@ -50,3 +50,4 @@ n() {
   dir=${1:-.}
   nautilus $dir
 }
+alias bb="~/Development/Tools/based-connect/based-connect -b 28:11:A5:E0:15:9C"

@@ -1,3 +1,6 @@
 #guake solarized toggle
 "~/bin/toggle"
     Control+Alt + 6
+
+"setxkbmap -device 10 -option apple:badmap"
+    Control + F6
