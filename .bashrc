@@ -160,3 +160,5 @@ source ~/.tools/bashmarks.sh
 
 export BAT_THEME="Monokai Extended Light"
 
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

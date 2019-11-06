@@ -33,8 +33,6 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'joukevandermaas/vim-ember-hbs'
 Plugin 'mxw/vim-jsx'
 
-Plugin 'ctrlpvim/ctrlp.vim'
-
 Plugin 'fatih/vim-go'
 
 Plugin 'ekalinin/Dockerfile.vim'
@@ -55,6 +53,8 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'enricobacis/vim-airline-clock'
 
 Plugin 'diepm/vim-rest-console'
+Plugin 'junegunn/fzf.vim'
+set rtp+=~/.fzf
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -232,7 +232,6 @@ map <4-MiddleMouse> <Nop>
 imap <4-MiddleMouse> <Nop>
 
 
-set runtimepath^=~/.vim/bundle/ctrlp.vim  "ctrlP
 set encoding=utf-8 " fix nerdtree's dir problem in the server
 
 set t_Co=256 "enabe 256 colors in vim
@@ -283,7 +282,6 @@ map <M-o> :copen<CR>
 let NERDTreeIgnore = ['\.beam']
 
 :set wildignore+=node_modules/**/*
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 "enable jsx only in .jsx files
 let g:jsx_ext_required = 1
@@ -352,3 +350,11 @@ endfun
 "buffers management
 nnoremap <M-e> :ls<cr>:b
 nnoremap <BS> <C-^>
+
+"map fzf to ctrlp binding
+"use different defaults than the .zsh FZF_DEFAULT_COMMAND
+command! -nargs=0 FzfFind call fzf#run(fzf#wrap({'source': 'rg --files'}))
+nnoremap <C-p> :FzfFind<Cr>
+
+"new way of searching (instead of :S)
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
