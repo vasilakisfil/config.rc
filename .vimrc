@@ -351,6 +351,14 @@ endfun
 nnoremap <M-e> :ls<cr>:b
 nnoremap <BS> <C-^>
 
+let g:vrc_curl_opts = {
+  \ '-sS': '',
+  \ '--connect-timeout': 10,
+  \ '-i': '',
+  \ '--max-time': 60,
+  \ '-k': '',
+\}
+
 "map fzf to ctrlp binding
 "use different defaults than the .zsh FZF_DEFAULT_COMMAND
 command! -nargs=0 FzfFind call fzf#run(fzf#wrap({'source': 'rg --files'}))
