@@ -55,6 +55,8 @@ Plugin 'enricobacis/vim-airline-clock'
 Plugin 'diepm/vim-rest-console'
 Plugin 'junegunn/fzf.vim'
 set rtp+=~/.fzf
+Plugin 'pbogut/fzf-mru.vim'
+Plugin 'gcmt/taboo.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -290,7 +292,7 @@ let g:jsx_ext_required = 1
 "set autochdir
 "make sure the working directory is set correctly when changing folders from
 "NERDTree
-"let NERDTreeChDirMode=2
+let g:NERDTreeChDirMode=3
 
 "ALE linting stuff
 let g:ale_lint_on_text_changed = 'never'
@@ -329,9 +331,9 @@ endfunction
 command! -nargs=1 F call SetFontSize(<f-args>)
 
 "jesus just jesus, why on earth...
-:let g:ycm_enable_diagnostic_highlighting = 0 
-:let g:ycm_show_diagnostics_ui = 0
-:let g:ycm_enable_diagnostic_signs = 0
+let g:ycm_enable_diagnostic_highlighting = 0 
+let g:ycm_show_diagnostics_ui = 0
+let g:ycm_enable_diagnostic_signs = 0
 
 "some common patterns extracted as shortcuts
 fun! s:polite_sub(search, ...)
@@ -366,3 +368,14 @@ nnoremap <C-p> :FzfFind<Cr>
 
 "new way of searching (instead of :S)
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+"TODO: <C-f> is already a page down for vim, need to remap this
+nmap <C-f> :Find<CR>
+
+set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
+
+"gvim only :/
+nmap <C-q> :NERDTreeToggle<CR>
+
+set guioptions-=e
+set sessionoptions+=tabpages,globals
+let g:taboo_tab_format = " %P/ %m "
