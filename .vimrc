@@ -367,7 +367,7 @@ command! -nargs=0 FzfFind call fzf#run(fzf#wrap({'source': 'rg --files'}))
 nnoremap <C-p> :FzfFind<Cr>
 
 "new way of searching (instead of :S)
-command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --smart-case --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 "TODO: <C-f> is already a page down for vim, need to remap this
 nmap <C-f> :Find<CR>
 

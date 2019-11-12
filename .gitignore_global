@@ -3,3 +3,4 @@
 latest.dump
 .bundle
 .gems
+target/
