@@ -94,7 +94,8 @@ function chpwd {
  if [ -e ".guakerc" ]; then
    setupguake
  else
-    guake -r ${PWD##*/}
+    #much faster than: guake -r ${PWD##*/}
+    dbus-send --session --type=method_call --print-reply --dest=org.guake3.RemoteControl /org/guake3/RemoteControl org.guake3.RemoteControl.rename_current_tab string:"${PWD##*/}" > /dev/null
  fi
 }
 
