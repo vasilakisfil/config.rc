@@ -2,5 +2,5 @@
 "~/bin/toggle"
     Control+Alt + 6
 
-"setxkbmap -device 10 -option apple:badmap"
+"~/bin/fix"
     Control + F6
