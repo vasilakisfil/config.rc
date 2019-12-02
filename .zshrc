@@ -91,20 +91,9 @@ source ~/.tools/bashmarks.sh
 export CURRENT_PROJECT_PATH=$HOME/.current-project
 
 function chpwd {
- if [ -e ".guakerc" ]; then
-   setupguake
- else
-    #much faster than: guake -r ${PWD##*/}
-    dbus-send --session --type=method_call --print-reply --dest=org.guake3.RemoteControl /org/guake3/RemoteControl org.guake3.RemoteControl.rename_current_tab string:"${PWD##*/}" > /dev/null
- fi
-}
-
-function setupguake() {
-  . $(pwd)/.guakerc
-
-  if ((${+name})); then
-    guake -r ${name}
-  fi
+   #much faster than: guake -r ${PWD##*/}
+   #use --print-reply to debug, otherwise remains silent (for envs that don't have guake)
+   dbus-send --session --type=method_call --dest=org.guake3.RemoteControl /org/guake3/RemoteControl org.guake3.RemoteControl.rename_current_tab string:"${PWD##*/}" > /dev/null
 }
 
 #allow iex to remember history
