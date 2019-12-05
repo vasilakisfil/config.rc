@@ -12,6 +12,11 @@ Plugin 'gmarik/vundle.vim'
 
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'dense-analysis/ale'
+
+"TODO: should be using instead: vim-obsession and vim-prosession
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-session'
+
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-haml'
 Plugin 'slim-template/vim-slim'
@@ -382,3 +387,14 @@ let g:taboo_tab_format = " %P/ %m "
 
 "much faster than guake -t && guake --execute-command uptime
 nmap <silent> <C-CR> :call system("dbus-send --session --type=method_call --dest=org.guake3.RemoteControl /org/guake3/RemoteControl org.guake3.RemoteControl.show_hide && dbus-send --session --type=method_call --dest=org.guake3.RemoteControl /org/guake3/RemoteControl org.guake3.RemoteControl.execute_command string:'cb'")<enter> 
+let g:session_autosave = 'no'
+
+
+fun! s:redraw()
+  tabdo NERDTree
+  set guiheadroom=0
+  let cursize = substitute(&guifont, s:pattern, '\2', '')
+  call SetFontSize(cursize)
+endfun
+
+command! -nargs=0 Fix call s:redraw()
