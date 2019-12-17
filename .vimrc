@@ -341,12 +341,13 @@ let g:ycm_show_diagnostics_ui = 0
 let g:ycm_enable_diagnostic_signs = 0
 
 "some common patterns extracted as shortcuts
-fun! s:polite_sub(search, ...)
+fun! s:polite_sub(search, ...) range
     let l:replace = get(a:, 1, '')
-    execute ':%s/' . a:search . '/' . l:replace . '/gc'
+    echom mode()
+    execute a:firstline . ',' . a:lastline . 's/' . a:search . '/' . l:replace . '/gc'
 endfun
 :command Picks call s:polite_sub("pick", "s")
-:command -nargs=+ Repl call s:polite_sub(<f-args>)
+:command -nargs=+ -range=% Repl :<line1>,<line2> call s:polite_sub(<f-args>)
 
 fun! s:global_search(term, ...)
     let l:type = get(a:, 1, expand('%:e'))
