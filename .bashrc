@@ -126,9 +126,6 @@ eval "$(direnv hook bash)" #direnv
 
 export ANDROID_HOME=/home/vasilakisfil/Android/Sdk
 
-export PSQL_EDITOR="/usr/bin/vim.gtk"
-
-
 export NVM_DIR="/home/vasilakisfil/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

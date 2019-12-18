@@ -3,4 +3,4 @@
 \set COMP_KEYWORD_CASE upper
 \set ON_ERROR_ROLLBACK interactive
 \set HISTFILE ~/.psql_history- :DBNAME
-
+\setenv PSQL_EDITOR "/usr/bin/vim"
