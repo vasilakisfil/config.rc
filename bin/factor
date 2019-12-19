@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-factor=${1:-1.0}
-
-gsettings set org.gnome.desktop.interface text-scaling-factor $factor

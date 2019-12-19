@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+current=$(gsettings get org.gnome.desktop.interface text-scaling-factor)
+if [ -z "$1" ]; then
+  if [ $(echo $current'>'1 | bc -l) -eq 1 ]; then
+    gsettings set org.gnome.desktop.interface text-scaling-factor 1.0
+  else
+    gsettings set org.gnome.desktop.interface text-scaling-factor 1.4
+  fi
+else
+  gsettings set org.gnome.desktop.interface text-scaling-factor $1
+fi
