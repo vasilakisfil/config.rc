@@ -18,6 +18,7 @@
 /bin/chrome
 /bin/rebar3
 /bin/wrk
+/bin/hercules
 
 !.xbindkeysrc
 !.aliases
