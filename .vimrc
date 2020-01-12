@@ -400,3 +400,5 @@ endfun
 command! -nargs=0 Fix call s:redraw()
 let NERDTreeMinimalUI = 1
 let g:session_autosave = 'no'
+
+set ttyfast
