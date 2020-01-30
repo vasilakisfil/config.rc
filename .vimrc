@@ -390,11 +390,18 @@ let g:taboo_tab_format = " %P/ %m "
 
 "much faster than guake -t && guake --execute-command uptime
 nmap <silent> <C-CR> :call system("dbus-send --session --type=method_call --dest=org.guake3.RemoteControl /org/guake3/RemoteControl org.guake3.RemoteControl.show_hide && dbus-send --session --type=method_call --dest=org.guake3.RemoteControl /org/guake3/RemoteControl org.guake3.RemoteControl.execute_command string:'\003 cb'")<enter> 
+"much faster than guake -t && guake --execute-command uptime
+nmap <silent> <C-S-CR> :call system("dbus-send --session --type=method_call --dest=org.guake3.RemoteControl /org/guake3/RemoteControl org.guake3.RemoteControl.show_hide && dbus-send --session --type=method_call --dest=org.guake3.RemoteControl /org/guake3/RemoteControl org.guake3.RemoteControl.execute_command string:'\003 ct'")<enter> 
 
 fun! s:redraw()
   set guiheadroom=0
   let cursize = substitute(&guifont, s:pattern, '\2', '')
   call SetFontSize(cursize)
+  "no bell and visual bell
+  set noerrorbells visualbell t_vb=
+  if has('autocmd')
+    autocmd GUIEnter * set visualbell t_vb=
+  endif
 endfun
 
 command! -nargs=0 Fix call s:redraw()
