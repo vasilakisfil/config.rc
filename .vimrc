@@ -54,6 +54,7 @@ Plugin 'slashmili/alchemist.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 
 Plugin 'rust-lang/rust.vim'
+Plugin 'leafgarland/typescript-vim'
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
