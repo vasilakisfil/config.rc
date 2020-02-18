@@ -61,10 +61,6 @@ export ANDROID_HOME=/home/vasilakisfil/Android/Sdk
 
 source ~/.git-flow-completion.zsh
 
-NEWLINE=$'\n'
-#PROMPT='${ret_status}%*%{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%}%{$reset_color%}${NEWLINE}%F{red}zsh>%{$reset_color%} '
-PROMPT='${ret_status}%*%{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%}%{$reset_color%}'
-
 export PATH="$HOME/bin:$PATH" #Add local scripts
 
 #import aliases
@@ -129,6 +125,8 @@ ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}git:(%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
+
+PROMPT='%D{%L:%M:%S} '$PROMPT
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'

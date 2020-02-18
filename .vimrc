@@ -410,3 +410,7 @@ let NERDTreeMinimalUI = 1
 let g:session_autosave = 'no'
 
 set ttyfast
+
+"smartcase requires ignorecase
+set ignorecase
+set smartcase
