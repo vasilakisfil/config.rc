@@ -358,10 +358,6 @@ fun! s:global_search(term, ...)
 endfun
 :command -nargs=+ S call s:global_search(<f-args>)
 
-"buffers management
-nnoremap <M-e> :ls<cr>:b
-nnoremap <BS> <C-^>
-
 let g:vrc_curl_opts = {
   \ '-sS': '',
   \ '--connect-timeout': 10,
@@ -379,6 +375,8 @@ nnoremap <C-p> :FzfFind<Cr>
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --smart-case --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
 "TODO: <C-f> is already a page down for vim, need to remap this
 nmap <C-f> :Find<CR>
+"searching buffers
+nmap <C-b> :Buffers<CR>
 
 set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
 
