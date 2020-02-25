@@ -412,3 +412,12 @@ set ttyfast
 "smartcase requires ignorecase
 set ignorecase
 set smartcase
+
+set switchbuf=useopen
+"function NERDTreeMyOpenFile(node)
+"    call a:node.activate({'reuse': 'currenttab', 'where': 'p'})
+"endfunction
+"autocmd VimEnter * :call NERDTreeAddKeyMap({ 'key': 'o', 'callback': 'NERDTreeMyOpenFile', 'scope': 'FileNode', 'override': 1 })
+"autocmd VimEnter * :call NERDTreeAddKeyMap({ 'key': '<CR>', 'callback': 'NERDTreeMyOpenFile', 'scope': 'FileNode', 'override': 1 })
+"autocmd VimEnter * :call NERDTreeAddKeyMap({'key': '<2-LeftMouse>', 'callback': 'NERDTreeMyOpenFile', 'scope': 'FileNode', 'override': 1 })
+let NERDTreeCustomOpenArgs = {'file': {'reuse': 'currenttab', 'where': 'p'}, 'dir': {}}
