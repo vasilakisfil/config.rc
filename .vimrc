@@ -421,3 +421,6 @@ set switchbuf=useopen
 "autocmd VimEnter * :call NERDTreeAddKeyMap({ 'key': '<CR>', 'callback': 'NERDTreeMyOpenFile', 'scope': 'FileNode', 'override': 1 })
 "autocmd VimEnter * :call NERDTreeAddKeyMap({'key': '<2-LeftMouse>', 'callback': 'NERDTreeMyOpenFile', 'scope': 'FileNode', 'override': 1 })
 let NERDTreeCustomOpenArgs = {'file': {'reuse': 'currenttab', 'where': 'p'}, 'dir': {}}
+
+"open last used buffer with backspace in normal mode
+nnoremap <BS> <C-^>
