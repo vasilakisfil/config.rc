@@ -287,6 +287,7 @@ map <M-j> :cn<CR>
 map <M-k> :cp<CR>
 "open using meta-o
 map <M-o> :copen<CR>
+map <M-c> :cclose<CR>
 
 :set term=xterm-256color
 let NERDTreeIgnore = ['\.beam']
@@ -373,6 +374,7 @@ nnoremap <C-p> :FzfFind<Cr>
 
 "new way of searching (instead of :S)
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --smart-case --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
+command! -bang -nargs=* FindAll call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --smart-case --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 "TODO: <C-f> is already a page down for vim, need to remap this
 nmap <C-f> :Find<CR>
 "searching buffers
@@ -424,3 +426,9 @@ let NERDTreeCustomOpenArgs = {'file': {'reuse': 'currenttab', 'where': 'p'}, 'di
 
 "open last used buffer with backspace in normal mode
 nnoremap <BS> <C-^>
+
+fun! s:reload()
+  so $MYVIMRC
+  Fix
+endfun
+command! -nargs=0 Reload call s:reload()
