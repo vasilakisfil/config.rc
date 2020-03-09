@@ -185,8 +185,6 @@ map <right> <nop>
 " Autosave every 200ms
 let g:auto_save = 1
 
-
-
 " Move current tab into the specified direction.
 "
 " @param direction -1 for left, 1 for right.
@@ -201,7 +199,7 @@ function! TabMove(direction)
         if a:direction < 0
             let index=((ctpn-1+ntp-1)%ntp)
         else
-            let index=(ctpn%ntp)
+            let index=((ctpn+1)%ntp)
         endif
 
         " move tab page.
