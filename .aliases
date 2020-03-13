@@ -44,10 +44,10 @@ alias svim="sudo -E vim"
 alias cat=bat
 alias batt="upower -i /org/freedesktop/UPower/devices/battery_BAT0"
 alias sh!="shutdown now"
-alias cb='f(){ clear && cargo build "$@" --color=always 2>&1 | less -RKFMX }; f'
-alias cc='f(){ clear && cargo check "$@" --color=always 2>&1 | less -RKFMX }; f'
-alias ct='f(){ clear && cargo test "$@" --color=always 2>&1 -- --test-threads=1 | less -RKFMX }; f'
-alias run='f(){ cargo run "$@" }; f'
+alias cb='f_cb(){ clear && cargo build "$@" --color=always 2>&1 | less -RKFMX }; f_cb'
+alias cc='f_cc(){ clear && cargo check "$@" --color=always 2>&1 | less -RKFMX }; f_cc'
+alias ct='f_ct(){ clear && cargo test "$@" --color=always 2>&1 -- --test-threads=1 | less -RKFMX }; f_ct'
+alias run='f_run(){ cargo run "$@" }; f_run'
 n() {
   dir=${1:-.}
   nautilus $dir
