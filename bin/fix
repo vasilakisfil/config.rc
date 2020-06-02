@@ -1,4 +1,4 @@
 #!/bin/bash
 
-output=$(xinput -list | grep Apple | grep -Po "id=(.[^\s]*)" | sed 's/id=//')
-setxkbmap -device ${output} -option apple:badmap
+output=$(xinput -list | grep Apple | grep -Po "id=(.[^\s]*)" | sed 's/id=//');
+echo "$output" | xargs -t -I id setxkbmap -device id -option apple:badmap;
