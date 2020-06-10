@@ -10,8 +10,8 @@ call vundle#begin()
 " required!
 Plugin 'gmarik/vundle.vim'
 
-Plugin 'ycm-core/YouCompleteMe'
-Plugin 'dense-analysis/ale'
+"Plugin 'ycm-core/YouCompleteMe'
+"Plugin 'dense-analysis/ale'
 
 "not working with NERDTree :/
 "Plugin 'tpope/vim-obsession'
@@ -302,11 +302,11 @@ let g:jsx_ext_required = 1
 let g:NERDTreeChDirMode=3
 
 "ALE linting stuff
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_insert_leave = 0
-let g:ale_lint_on_enter = 0
-let g:ale_lint_on_save = 0
-let g:ale_lint_on_filetype_changed = 0
+"let g:ale_lint_on_text_changed = 'never'
+"let g:ale_lint_on_insert_leave = 0
+"let g:ale_lint_on_enter = 0
+"let g:ale_lint_on_save = 0
+"let g:ale_lint_on_filetype_changed = 0
 
 "essentially ctrl can also be part of it mapping to Kate/latex favorite shortcut
 nmap <M-lt> :RustFmt<CR>
@@ -338,9 +338,9 @@ endfunction
 command! -nargs=1 F call SetFontSize(<f-args>)
 
 "jesus just jesus, why on earth...
-let g:ycm_enable_diagnostic_highlighting = 0 
-let g:ycm_show_diagnostics_ui = 0
-let g:ycm_enable_diagnostic_signs = 0
+"let g:ycm_enable_diagnostic_highlighting = 0 
+"let g:ycm_show_diagnostics_ui = 0
+"let g:ycm_enable_diagnostic_signs = 0
 
 "some common patterns extracted as shortcuts
 fun! s:polite_sub(search, ...) range

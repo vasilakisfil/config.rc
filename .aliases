@@ -46,6 +46,7 @@ alias batt="upower -i /org/freedesktop/UPower/devices/battery_BAT0"
 alias sh!="shutdown now"
 alias cb='f_cb(){ clear && cargo build "$@" --color=always 2>&1 | less -rKFMX }; f_cb'
 alias cc='f_cc(){ clear && cargo check "$@" --color=always 2>&1 | less -rKFMX }; f_cc'
+alias clippy='f_clippy(){ clear && cargo clippy "$@" --color=always 2>&1 | less -rKFMX }; f_clippy'
 #you need both --color=always 2>&1 here. One if tests fail, the other if tests succeed (to colorize the Ok).
 alias ct='f_ct(){ clear && cargo test "$@" --color=always 2>&1 -- --color=always --nocapture --test-threads=1 | less -rKFMX }; f_ct'
 alias run='f_run(){ cargo run "$@" }; f_run'
