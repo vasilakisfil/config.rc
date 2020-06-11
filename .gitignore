@@ -30,9 +30,6 @@
 !.gitignore_global
 !.vimrc_config
 
-/.nvm/*
-!/.nvm/default-packages
-
 !/.config/
 /.config/*
 !/.config/devilspie2

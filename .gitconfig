@@ -6,7 +6,9 @@
 	editor = vim
   hooksPath = /home/vasilakisfil/.githooks/
 	excludesfile = ~/.gitignore_global
-	pager = diff-so-fancy | less --tabs=4 -RFX
+  pager = delta --theme='Solarized (light)'
+[interactive]
+  diffFilter = delta --color-only
 [push]
 	default = current
 	followTags = true
