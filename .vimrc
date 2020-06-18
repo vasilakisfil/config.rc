@@ -430,3 +430,6 @@ fun! s:reload()
   Fix
 endfun
 command! -nargs=0 Reload call s:reload()
+
+nmap =j :%!python -m json.tool<CR>
+let g:vrc_response_default_content_type = 'application/json'
