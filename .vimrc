@@ -66,6 +66,8 @@ set rtp+=~/.fzf
 Plugin 'pbogut/fzf-mru.vim'
 Plugin 'gcmt/taboo.vim'
 
+Plugin 'vim-erlang/vim-erlang-runtime'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
