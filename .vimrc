@@ -65,6 +65,7 @@ Plugin 'junegunn/fzf.vim'
 set rtp+=~/.fzf
 Plugin 'pbogut/fzf-mru.vim'
 Plugin 'gcmt/taboo.vim'
+Plugin 'junegunn/goyo.vim'
 
 Plugin 'vim-erlang/vim-erlang-runtime'
 
