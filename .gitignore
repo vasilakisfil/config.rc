@@ -19,6 +19,7 @@
 /bin/rebar3
 /bin/wrk
 /bin/hercules
+/bin/ngrok
 
 !.xbindkeysrc
 !.aliases
