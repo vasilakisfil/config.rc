@@ -395,6 +395,9 @@ nmap <silent> <C-CR> :call system("dbus-send --session --type=method_call --dest
 "much faster than guake -t && guake --execute-command uptime
 nmap <silent> <C-S-CR> :call system("dbus-send --session --type=method_call --dest=org.guake3.RemoteControl /org/guake3/RemoteControl org.guake3.RemoteControl.show_hide && dbus-send --session --type=method_call --dest=org.guake3.RemoteControl /org/guake3/RemoteControl org.guake3.RemoteControl.execute_command string:'\003 cb'")<enter> 
 
+"much faster than guake -t && guake --execute-command uptime
+nmap <silent> <C-S-BS> :call system("dbus-send --session --type=method_call --dest=org.guake3.RemoteControl /org/guake3/RemoteControl org.guake3.RemoteControl.show_hide && dbus-send --session --type=method_call --dest=org.guake3.RemoteControl /org/guake3/RemoteControl org.guake3.RemoteControl.execute_command string:'\003 ct'")<enter> 
+
 fun! s:redraw()
   set guiheadroom=0
   let cursize = substitute(&guifont, s:pattern, '\2', '')
