@@ -391,12 +391,14 @@ set sessionoptions+=tabpages,globals
 let g:taboo_tab_format = " %P/ %m "
 
 "much faster than guake -t && guake --execute-command uptime
+"ctrl + Enter runs cargo check (cc)
 nmap <silent> <C-CR> :call system("dbus-send --session --type=method_call --dest=org.guake3.RemoteControl /org/guake3/RemoteControl org.guake3.RemoteControl.show_hide && dbus-send --session --type=method_call --dest=org.guake3.RemoteControl /org/guake3/RemoteControl org.guake3.RemoteControl.execute_command string:'\003 cc'")<enter> 
-"much faster than guake -t && guake --execute-command uptime
+"ctrl + Shift + Enter runs cargo build (cb)
 nmap <silent> <C-S-CR> :call system("dbus-send --session --type=method_call --dest=org.guake3.RemoteControl /org/guake3/RemoteControl org.guake3.RemoteControl.show_hide && dbus-send --session --type=method_call --dest=org.guake3.RemoteControl /org/guake3/RemoteControl org.guake3.RemoteControl.execute_command string:'\003 cb'")<enter> 
-
-"much faster than guake -t && guake --execute-command uptime
-nmap <silent> <C-BS> :call system("dbus-send --session --type=method_call --dest=org.guake3.RemoteControl /org/guake3/RemoteControl org.guake3.RemoteControl.show_hide && dbus-send --session --type=method_call --dest=org.guake3.RemoteControl /org/guake3/RemoteControl org.guake3.RemoteControl.execute_command string:'\003 ct'")<enter> 
+"ctrl + Enter runs cargo check --tests (cc --tests)
+nmap <silent> <C-BS> :call system("dbus-send --session --type=method_call --dest=org.guake3.RemoteControl /org/guake3/RemoteControl org.guake3.RemoteControl.show_hide && dbus-send --session --type=method_call --dest=org.guake3.RemoteControl /org/guake3/RemoteControl org.guake3.RemoteControl.execute_command string:'\003 cc --tests'")<enter> 
+"ctrl + Shift + Enter runs cargo tests (ct)
+nmap <silent> <C-S-BS> :call system("dbus-send --session --type=method_call --dest=org.guake3.RemoteControl /org/guake3/RemoteControl org.guake3.RemoteControl.show_hide && dbus-send --session --type=method_call --dest=org.guake3.RemoteControl /org/guake3/RemoteControl org.guake3.RemoteControl.execute_command string:'\003 ct'")<enter> 
 
 fun! s:redraw()
   set guiheadroom=0
