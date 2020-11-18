@@ -31,6 +31,7 @@
   ri=rebase -i origin/master
   branches = "!f() { git for-each-ref --sort=committerdate refs/$1 --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'; }; f"
   dl= diff --name-only #I need to find a way to list them as shown in git status
+  db= log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative 
   shoot= push origin --delete
   branch-name=symbolic-ref --short HEAD
   #why git doesn't have some nice defaults? :/
