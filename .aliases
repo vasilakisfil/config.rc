@@ -57,3 +57,4 @@ n() {
 alias bb="~/Development/Tools/based-connect/based-connect -b 28:11:A5:E0:15:9C"
 alias o=xdg-open
 alias ipa="ip -c address show"
+alias mem='f_mem(){ smem -t -k -c pss -P "$@" | tail -n 1 }; f_mem'
