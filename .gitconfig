@@ -38,9 +38,7 @@
   fuckoff="!f(){ git branch --set-upstream-to=origin/$(git branch-name); }; f"
   repush="!f(){ git fetch && git rebase origin/master && git push; }; f"
   cleanup="!f(){ git branch --merged | egrep -v '(^\\*|master|dev)' | xargs git branch -d;}; f"
-  lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(normal)%s%C(reset) %C(dim normal)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
-  lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(normal)%s%C(reset) %C(dim normal)- %an%C(reset)' --all
-  lg = !"git lg1"
+  lg=log --oneline --graph --all --decorate --abbrev-commit
   cof = !git for-each-ref --format='%(refname:short)' refs/heads | fzf | xargs git checkout
   common-words = "!f(){ git log --pretty=format:'%s' | tr \" \" \"\\n\" |  tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -nr | head -20; }; f"
 [commit]
