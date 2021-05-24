@@ -4,3 +4,4 @@ latest.dump
 .bundle
 .gems
 target/
+*.pgsql
