@@ -49,7 +49,7 @@ alias cc='f_cc(){ clear && cargo check "$@" --color=always 2>&1 | less -rKFMX };
 alias ccts="cc --tests"
 alias ccl='f_clippy(){ clear && cargo clippy "$@" --color=always 2>&1 | less -rKFMX }; f_clippy'
 #you need both --color=always 2>&1 here. One if tests fail, the other if tests succeed (to colorize the Ok).
-alias ct='f_ct(){ clear && cargo test "$@" --color=always 2>&1 -- --color=always --nocapture --test-threads=1 | less -rKFMX }; f_ct'
+alias ct='f_ct(){ clear && cargo test "$@" --color=always 2>&1 -- --color=always --nocapture --test-threads=1 }; f_ct'
 alias run='f_run(){ cargo run "$@" }; f_run'
 n() {
   dir=${1:-.}
