@@ -231,6 +231,7 @@ autocmd VimEnter * call StartUp()
 let &colorcolumn="80,".join(range(120,999),",")
 "unless it's rust
 autocmd FileType rust setlocal colorcolumn=100 shiftwidth=4 softtabstop=4 tabstop=4
+autocmd FileType ruby setlocal colorcolumn=100
 
 " VERY IMPORTANT (disables mouse copy pastes :/)
 map <MiddleMouse> <Nop>
