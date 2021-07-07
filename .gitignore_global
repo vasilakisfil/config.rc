@@ -5,3 +5,4 @@ latest.dump
 .gems
 target/
 *.pgsql
+*.rest
