@@ -11,7 +11,7 @@ call vundle#begin()
 Plugin 'gmarik/vundle.vim'
 
 "Plugin 'ycm-core/YouCompleteMe'
-"Plugin 'dense-analysis/ale'
+Plugin 'dense-analysis/ale'
 
 "not working with NERDTree :/
 "Plugin 'tpope/vim-obsession'
@@ -100,7 +100,7 @@ syntax on
 
 " Change leader to a comma because the backslash is too far away
 " That means all \x commands turn into ,x
-" The mapleader has to be set before vundle starts loading all 
+" The mapleader has to be set before vundle starts loading all
 " the plugins.
 " let mapleader=","
 
@@ -342,7 +342,7 @@ endfunction
 command! -nargs=1 F call SetFontSize(<f-args>)
 
 "jesus just jesus, why on earth...
-"let g:ycm_enable_diagnostic_highlighting = 0 
+"let g:ycm_enable_diagnostic_highlighting = 0
 "let g:ycm_show_diagnostics_ui = 0
 "let g:ycm_enable_diagnostic_signs = 0
 
@@ -393,13 +393,13 @@ let g:taboo_tab_format = " %P/ %m "
 
 "much faster than guake -t && guake --execute-command uptime
 "ctrl + Enter runs cargo check (cc)
-nmap <silent> <C-CR> :call system("dbus-send --session --type=method_call --dest=org.guake3.RemoteControl /org/guake3/RemoteControl org.guake3.RemoteControl.show_hide && dbus-send --session --type=method_call --dest=org.guake3.RemoteControl /org/guake3/RemoteControl org.guake3.RemoteControl.execute_command string:'\003 cc'")<enter> 
+nmap <silent> <C-CR> :call system("dbus-send --session --type=method_call --dest=org.guake3.RemoteControl /org/guake3/RemoteControl org.guake3.RemoteControl.show_hide && dbus-send --session --type=method_call --dest=org.guake3.RemoteControl /org/guake3/RemoteControl org.guake3.RemoteControl.execute_command string:'\003 cc'")<enter>
 "ctrl + Shift + Enter runs cargo build (cb)
-nmap <silent> <C-S-CR> :call system("dbus-send --session --type=method_call --dest=org.guake3.RemoteControl /org/guake3/RemoteControl org.guake3.RemoteControl.show_hide && dbus-send --session --type=method_call --dest=org.guake3.RemoteControl /org/guake3/RemoteControl org.guake3.RemoteControl.execute_command string:'\003 cb'")<enter> 
+nmap <silent> <C-S-CR> :call system("dbus-send --session --type=method_call --dest=org.guake3.RemoteControl /org/guake3/RemoteControl org.guake3.RemoteControl.show_hide && dbus-send --session --type=method_call --dest=org.guake3.RemoteControl /org/guake3/RemoteControl org.guake3.RemoteControl.execute_command string:'\003 cb'")<enter>
 "ctrl + Enter runs cargo check --tests (cc --tests)
-nmap <silent> <C-BS> :call system("dbus-send --session --type=method_call --dest=org.guake3.RemoteControl /org/guake3/RemoteControl org.guake3.RemoteControl.show_hide && dbus-send --session --type=method_call --dest=org.guake3.RemoteControl /org/guake3/RemoteControl org.guake3.RemoteControl.execute_command string:'\003 cc --tests'")<enter> 
+nmap <silent> <C-BS> :call system("dbus-send --session --type=method_call --dest=org.guake3.RemoteControl /org/guake3/RemoteControl org.guake3.RemoteControl.show_hide && dbus-send --session --type=method_call --dest=org.guake3.RemoteControl /org/guake3/RemoteControl org.guake3.RemoteControl.execute_command string:'\003 cc --tests'")<enter>
 "ctrl + Shift + Enter runs cargo tests (ct)
-nmap <silent> <C-S-BS> :call system("dbus-send --session --type=method_call --dest=org.guake3.RemoteControl /org/guake3/RemoteControl org.guake3.RemoteControl.show_hide && dbus-send --session --type=method_call --dest=org.guake3.RemoteControl /org/guake3/RemoteControl org.guake3.RemoteControl.execute_command string:'\003 ct'")<enter> 
+nmap <silent> <C-S-BS> :call system("dbus-send --session --type=method_call --dest=org.guake3.RemoteControl /org/guake3/RemoteControl org.guake3.RemoteControl.show_hide && dbus-send --session --type=method_call --dest=org.guake3.RemoteControl /org/guake3/RemoteControl org.guake3.RemoteControl.execute_command string:'\003 ct'")<enter>
 
 fun! s:redraw()
   set guiheadroom=0
@@ -429,7 +429,7 @@ set switchbuf=useopen
 "autocmd VimEnter * :call NERDTreeAddKeyMap({ 'key': 'o', 'callback': 'NERDTreeMyOpenFile', 'scope': 'FileNode', 'override': 1 })
 "autocmd VimEnter * :call NERDTreeAddKeyMap({ 'key': '<CR>', 'callback': 'NERDTreeMyOpenFile', 'scope': 'FileNode', 'override': 1 })
 "autocmd VimEnter * :call NERDTreeAddKeyMap({'key': '<2-LeftMouse>', 'callback': 'NERDTreeMyOpenFile', 'scope': 'FileNode', 'override': 1 })
-let NERDTreeCustomOpenArgs = {'file': {'reuse': 'currenttab', 'where': 'p'}, 'dir': {}}
+let NERDTreeCustomOpenArgs = {'file': {'reuse': 'currenttab', 'where': 'p', 'keepopen': 1}, 'dir': {}}
 
 "open last used buffer with backspace in normal mode
 nnoremap <BS> <C-^>
@@ -444,3 +444,13 @@ nmap =j :%!python -m json.tool<CR>
 let g:vrc_response_default_content_type = 'application/json'
 
 command! -nargs=0 Sw w !sudo tee % > /dev/null
+
+let g:airline_symbols_ascii = 1
+
+set completeopt=menu,menuone,preview,noselect,noinsert
+let g:ale_completion_enabled = 1
+let g:ale_fixers = { 'rust': ['rustfmt', 'trim_whitespace', 'remove_trailing_lines'] }
+let g:ale_linters = { 'rust': ['analyzer'] }
+let g:ale_rust_analyzer_config = {
+  \ 'cargo': { 'allFeatures': v:true }
+  \ }
