@@ -10,8 +10,7 @@ call vundle#begin()
 " required!
 Plugin 'gmarik/vundle.vim'
 
-"Plugin 'ycm-core/YouCompleteMe'
-Plugin 'dense-analysis/ale'
+Plugin 'ycm-core/YouCompleteMe'
 
 "not working with NERDTree :/
 "Plugin 'tpope/vim-obsession'
@@ -102,7 +101,7 @@ syntax on
 " That means all \x commands turn into ,x
 " The mapleader has to be set before vundle starts loading all
 " the plugins.
-" let mapleader=","
+"let mapleader=","
 
 
 " ================ Turn Off Swap Files ==============
@@ -447,10 +446,25 @@ command! -nargs=0 Sw w !sudo tee % > /dev/null
 
 let g:airline_symbols_ascii = 1
 
-set completeopt=menu,menuone,preview,noselect,noinsert
-let g:ale_completion_enabled = 1
-let g:ale_fixers = { 'rust': ['rustfmt', 'trim_whitespace', 'remove_trailing_lines'] }
-let g:ale_linters = { 'rust': ['analyzer'] }
-let g:ale_rust_analyzer_config = {
-  \ 'cargo': { 'allFeatures': v:true }
-  \ }
+""set completeopt=menu,menuone,preview,noselect,noinsert
+"let g:ale_completion_enabled = 1
+""let g:ale_fixers = { 'rust': ['rustfmt', 'trim_whitespace', 'remove_trailing_lines'] }
+"let g:ale_linters = { 'rust': ['analyzer'] }
+"let g:ale_linters_ignore = {
+"      \   'rust': ['analyzer'],
+"      \}
+""let g:ale_linters = { 'rust': [] }
+"let g:ale_rust_analyzer_config = {
+"  \ 'cargo': { 'allFeatures': v:true }
+"  \ }
+""let g:ale_sign_column_always = 1
+""set omnifunc=ale#completion#OmniFunc
+
+set completeopt-=preview
+nnoremap ,! :YcmCompleter GoToDeclaration<CR>
+let g:ycm_show_diagnostics_ui = 0
+let g:ycm_auto_trigger = 0
+inoremap <expr><C-J> pumvisible() ? "\<C-n>" : "\<C-J>"
+inoremap <expr><C-K> pumvisible() ? "\<C-p>" : "\<C-K>"
+let g:ycm_global_ycm_extra_conf = '~/.config/nvim/global_extra_conf.py'
+let g:ycm_auto_hover = ''
