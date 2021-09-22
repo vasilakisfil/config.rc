@@ -226,9 +226,16 @@ endfunction
 
 autocmd VimEnter * call StartUp()
 
-function! RubyStuff()
+function! DefaultStuff()
   " Add 80 characters column highlight
   let &colorcolumn="80,".join(range(120,999),",")
+
+  autocmd FileType ruby setlocal colorcolumn=100
+endfunction
+
+function! RubyStuff()
+  " Add 80 characters column highlight
+  let &colorcolumn="100,".join(range(120,999),",")
 
   autocmd FileType ruby setlocal colorcolumn=100
 endfunction
@@ -240,11 +247,11 @@ function! RustStuff()
   autocmd FileType rust setlocal colorcolumn=100 shiftwidth=4 softtabstop=4 tabstop=4
 endfunction
 
+call DefaultStuff()
 augroup ruby
   autocmd!
-  autocmd FileType rust call RubyStuff()
+  autocmd FileType ruby call RubyStuff()
 augroup end
-
 augroup rust
   autocmd!
   autocmd FileType rust call RustStuff()
