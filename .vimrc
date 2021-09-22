@@ -226,11 +226,29 @@ endfunction
 
 autocmd VimEnter * call StartUp()
 
-" Add 80 characters column highlight
-let &colorcolumn="80,".join(range(120,999),",")
-"unless it's rust
-autocmd FileType rust setlocal colorcolumn=100 shiftwidth=4 softtabstop=4 tabstop=4
-autocmd FileType ruby setlocal colorcolumn=100
+function! RubyStuff()
+  " Add 80 characters column highlight
+  let &colorcolumn="80,".join(range(120,999),",")
+
+  autocmd FileType ruby setlocal colorcolumn=100
+endfunction
+
+function! RustStuff()
+  " Add 100 characters column highlight
+  let &colorcolumn="100,".join(range(120,999),",")
+
+  autocmd FileType rust setlocal colorcolumn=100 shiftwidth=4 softtabstop=4 tabstop=4
+endfunction
+
+augroup ruby
+  autocmd!
+  autocmd FileType rust call RubyStuff()
+augroup end
+
+augroup rust
+  autocmd!
+  autocmd FileType rust call RustStuff()
+augroup end
 
 " VERY IMPORTANT (disables mouse copy pastes :/)
 map <MiddleMouse> <Nop>

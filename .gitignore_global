@@ -6,3 +6,5 @@ latest.dump
 target/
 *.pgsql
 *.rest
+coverage/
+notes.txt
