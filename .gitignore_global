@@ -8,3 +8,4 @@ target/
 *.rest
 coverage/
 notes.txt
+*.rest
