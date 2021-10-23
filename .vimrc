@@ -10,8 +10,6 @@ call vundle#begin()
 " required!
 Plugin 'gmarik/vundle.vim'
 
-Plugin 'ycm-core/YouCompleteMe'
-
 "not working with NERDTree :/
 "Plugin 'tpope/vim-obsession'
 "Plugin 'dhruvasagar/vim-prosession'
@@ -484,12 +482,3 @@ let g:airline_symbols_ascii = 1
 "  \ }
 ""let g:ale_sign_column_always = 1
 ""set omnifunc=ale#completion#OmniFunc
-
-set completeopt-=preview
-nnoremap ,! :YcmCompleter GoToDeclaration<CR>
-let g:ycm_show_diagnostics_ui = 0
-let g:ycm_auto_trigger = 0
-inoremap <expr><C-J> pumvisible() ? "\<C-n>" : "\<C-J>"
-inoremap <expr><C-K> pumvisible() ? "\<C-p>" : "\<C-K>"
-let g:ycm_global_ycm_extra_conf = '~/.config/nvim/global_extra_conf.py'
-let g:ycm_auto_hover = ''
