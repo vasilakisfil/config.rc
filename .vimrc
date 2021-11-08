@@ -335,7 +335,7 @@ let g:NERDTreeChDirMode=3
 "let g:ale_lint_on_filetype_changed = 0
 
 "essentially ctrl can also be part of it mapping to Kate/latex favorite shortcut
-nmap <M-lt> :RustFmt<CR>
+nmap <C-M-lt> :RustFmt<CR>
 let g:rustfmt_options=''
 
 let g:airline_theme='light'
