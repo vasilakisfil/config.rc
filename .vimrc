@@ -51,6 +51,8 @@ Plugin 'slashmili/alchemist.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 
 Plugin 'rust-lang/rust.vim'
+Plugin 'cespare/vim-toml'
+
 Plugin 'leafgarland/typescript-vim'
 
 Plugin 'vim-airline/vim-airline'
