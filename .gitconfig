@@ -27,6 +27,7 @@
   please = push --force-with-lease
   grog = log --oneline --decorate --graph --all
   remend = commit -a --amend --date=now
+  squeeze = commit -a --amend
   count = rev-list --count master
   ri=rebase -i origin/master
   branches = "!f() { git for-each-ref --sort=committerdate refs/$1 --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'; }; f"
