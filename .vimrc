@@ -1,74 +1,72 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-
-" let Vundle manage Vundle
-" required!
-Plugin 'gmarik/vundle.vim'
-
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+call plug#begin()
 "not working with NERDTree :/
 "Plugin 'tpope/vim-obsession'
 "Plugin 'dhruvasagar/vim-prosession'
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-session'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-session'
 
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-haml'
-Plugin 'slim-template/vim-slim'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'vim-scripts/proton'
-Plugin '907th/vim-auto-save'
-Plugin 'tpope/vim-surround'
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-vinegar'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'tfnico/vim-gradle'
-Plugin 'vitalk/vim-shebang'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-haml'
+Plug 'slim-template/vim-slim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'vim-scripts/proton'
+Plug '907th/vim-auto-save'
+Plug 'tpope/vim-surround'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-vinegar'
+Plug 'kchmck/vim-coffee-script'
+Plug 'tfnico/vim-gradle'
+Plug 'vitalk/vim-shebang'
 
-Plugin 'pangloss/vim-javascript'
-Plugin 'nathanaelkane/vim-indent-guides'
-"Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'joukevandermaas/vim-ember-hbs'
-Plugin 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
+Plug 'nathanaelkane/vim-indent-guides'
+"Plug 'mustache/vim-mustache-handlebars'
+Plug 'joukevandermaas/vim-ember-hbs'
+Plug 'mxw/vim-jsx'
 
-Plugin 'fatih/vim-go'
+Plug 'fatih/vim-go'
 
-Plugin 'ekalinin/Dockerfile.vim'
+Plug 'ekalinin/Dockerfile.vim'
 
-Plugin 'elzr/vim-json'
+Plug 'elzr/vim-json'
 
-Plugin 'rhysd/vim-crystal'
+Plug 'rhysd/vim-crystal'
 
-Plugin 'elixir-editors/vim-elixir'
-Plugin 'slashmili/alchemist.vim'
+Plug 'elixir-editors/vim-elixir'
+Plug 'slashmili/alchemist.vim'
 
-Plugin 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-navigator'
 
-Plugin 'rust-lang/rust.vim'
-Plugin 'cespare/vim-toml'
+Plug 'rust-lang/rust.vim'
+Plug 'cespare/vim-toml'
 
-Plugin 'leafgarland/typescript-vim'
+Plug 'leafgarland/typescript-vim'
 
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'enricobacis/vim-airline-clock'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'enricobacis/vim-airline-clock'
 
-Plugin 'diepm/vim-rest-console'
-Plugin 'junegunn/fzf.vim'
+Plug 'diepm/vim-rest-console'
+Plug 'junegunn/fzf.vim'
 set rtp+=~/.fzf
-Plugin 'pbogut/fzf-mru.vim'
-Plugin 'gcmt/taboo.vim'
-Plugin 'junegunn/goyo.vim'
+Plug 'pbogut/fzf-mru.vim'
+Plug 'gcmt/taboo.vim'
+Plug 'junegunn/goyo.vim'
 
-Plugin 'vim-erlang/vim-erlang-runtime'
+Plug 'vim-erlang/vim-erlang-runtime'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+call plug#end()
 
-call vundle#end()            " required
 filetype plugin indent on    " required
 
 " ================ General Config ====================

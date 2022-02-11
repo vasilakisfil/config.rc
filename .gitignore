@@ -21,6 +21,7 @@
 /bin/hercules
 /bin/ngrok
 /bin/swaks
+/bin/particle
 
 !.xbindkeysrc
 !.aliases
