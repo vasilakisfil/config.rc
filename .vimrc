@@ -8,10 +8,8 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 call plug#begin()
 "not working with NERDTree :/
-"Plugin 'tpope/vim-obsession'
-"Plugin 'dhruvasagar/vim-prosession'
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-session'
+Plug 'tpope/vim-obsession'
+Plug 'dhruvasagar/vim-prosession'
 
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-haml'
@@ -140,23 +138,6 @@ set linebreak    "Wrap lines at convenient points
 set foldmethod=indent   "fold based on indent
 set foldnestmax=3       "deepest fold is 3 levels
 set nofoldenable        "dont fold by default
-
-" ================ Completion =======================
-
-"set wildmode=list:longest
-"set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
-"set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
-"set wildignore+=*vim/backups*
-"set wildignore+=*sass-cache*
-"set wildignore+=*DS_Store*
-"set wildignore+=vendor/rails/**
-"set wildignore+=vendor/cache/**
-"set wildignore+=*.gem
-"set wildignore+=log/**
-"set wildignore+=tmp/**
-"set wildignore+=*.png,*.jpg,*.gif
-
-"
 
 " ================ Scrolling ========================
 
@@ -327,13 +308,6 @@ let g:jsx_ext_required = 1
 "NERDTree
 let g:NERDTreeChDirMode=3
 
-"ALE linting stuff
-"let g:ale_lint_on_text_changed = 'never'
-"let g:ale_lint_on_insert_leave = 0
-"let g:ale_lint_on_enter = 0
-"let g:ale_lint_on_save = 0
-"let g:ale_lint_on_filetype_changed = 0
-
 "essentially ctrl can also be part of it mapping to Kate/latex favorite shortcut
 nmap <C-M-lt> :RustFmt<CR>
 nmap <C-M-«> :RustFmt<CR>
@@ -363,11 +337,6 @@ function! DecreaseFont(amount)
   SetFontSize(cursize + 1)
 endfunction
 command! -nargs=1 F call SetFontSize(<f-args>)
-
-"jesus just jesus, why on earth...
-"let g:ycm_enable_diagnostic_highlighting = 0
-"let g:ycm_show_diagnostics_ui = 0
-"let g:ycm_enable_diagnostic_signs = 0
 
 "some common patterns extracted as shortcuts
 fun! s:polite_sub(search, ...) range
@@ -437,7 +406,6 @@ endfun
 
 command! -nargs=0 Fix call s:redraw()
 let NERDTreeMinimalUI = 1
-let g:session_autosave = 'no'
 
 set ttyfast
 
@@ -469,17 +437,3 @@ let g:vrc_response_default_content_type = 'application/json'
 command! -nargs=0 Sw w !sudo tee % > /dev/null
 
 let g:airline_symbols_ascii = 1
-
-""set completeopt=menu,menuone,preview,noselect,noinsert
-"let g:ale_completion_enabled = 1
-""let g:ale_fixers = { 'rust': ['rustfmt', 'trim_whitespace', 'remove_trailing_lines'] }
-"let g:ale_linters = { 'rust': ['analyzer'] }
-"let g:ale_linters_ignore = {
-"      \   'rust': ['analyzer'],
-"      \}
-""let g:ale_linters = { 'rust': [] }
-"let g:ale_rust_analyzer_config = {
-"  \ 'cargo': { 'allFeatures': v:true }
-"  \ }
-""let g:ale_sign_column_always = 1
-""set omnifunc=ale#completion#OmniFunc
