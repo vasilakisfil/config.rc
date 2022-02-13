@@ -10,112 +10,91 @@ call plug#begin()
 "not working with NERDTree :/
 Plug 'tpope/vim-obsession'
 Plug 'dhruvasagar/vim-prosession'
-
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-haml'
 Plug 'slim-template/vim-slim'
 Plug 'altercation/vim-colors-solarized'
-Plug 'vim-scripts/proton'
 Plug '907th/vim-auto-save'
 Plug 'tpope/vim-surround'
-Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-vinegar'
-Plug 'kchmck/vim-coffee-script'
-Plug 'tfnico/vim-gradle'
 Plug 'vitalk/vim-shebang'
-
 Plug 'pangloss/vim-javascript'
 Plug 'nathanaelkane/vim-indent-guides'
-"Plug 'mustache/vim-mustache-handlebars'
 Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'mxw/vim-jsx'
-
 Plug 'fatih/vim-go'
-
 Plug 'ekalinin/Dockerfile.vim'
-
 Plug 'elzr/vim-json'
-
 Plug 'rhysd/vim-crystal'
-
 Plug 'elixir-editors/vim-elixir'
 Plug 'slashmili/alchemist.vim'
-
 Plug 'christoomey/vim-tmux-navigator'
-
 Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
-
 Plug 'leafgarland/typescript-vim'
-
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'enricobacis/vim-airline-clock'
-
 Plug 'diepm/vim-rest-console'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-set rtp+=~/.fzf
 Plug 'pbogut/fzf-mru.vim'
 Plug 'gcmt/taboo.vim'
 Plug 'junegunn/goyo.vim'
-
 Plug 'vim-erlang/vim-erlang-runtime'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
-filetype plugin indent on    " required
-
 " ================ General Config ====================
-" sets:
-" - skin
-source ~/.vimrc_config
+"turn on syntax highlighting
+syntax on
+filetype plugin indent on
 
-set number                      "Line numbers are good
-"set backspace=indent,eol,start  "Allow backspace in insert mode
-set history=1000                "Store lots of :cmdline history
-set showcmd                     "Show incomplete cmds down the bottom
-set showmode                    "Show current mode down the bottom
-set gcr=a:blinkon0              "Disable cursor blink
-set autoread                    "Reload files changed outside vim
-"no bell and visual bell
-set noerrorbells visualbell t_vb=
+set number
+set history=10000
+set showcmd
+set showmode "Show current mode down the bottom
+set gcr=a:blinkon0 "Disable cursor blink
+set autoread "Reload files changed outside vim
+
+set noerrorbells visualbell t_vb= "no bell and visual bell
 if has('autocmd')
   autocmd GUIEnter * set visualbell t_vb=
 endif
 
-" This makes vim act like all other editors, buffers can
-" exist in the background without being in a window.
-" http://items.sjbach.com/319/configuring-vim-right
-set hidden
+set hidden "buffers can be hidden
+set nowrap       "Don't wrap lines
+set linebreak    "Wrap lines at convenient points
 
-"turn on syntax highlighting
-syntax on
+set encoding=utf-8 " fix nerdtree's dir problem in the server
+set t_Co=256 "enabe 256 colors in vim
+set term=xterm-256color
 
-" Change leader to a comma because the backslash is too far away
-" That means all \x commands turn into ,x
-" The mapleader has to be set before vundle starts loading all
-" the plugins.
-"let mapleader=","
+"disable visual flickering
+set novb
 
+set wildignore+=node_modules/**/*
+"conceal [link text](link url) as just link text.
+set conceallevel=2
 
-" ================ Turn Off Swap Files ==============
+"TODO: fix me
+"show whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+" Display tabs and trailing spaces visually
+"set list listchars=tab:\ \ ,trail:\ 
 
-set noswapfile
-set nobackup
-set nowb
-
-" ================ Persistent Undo ==================
-" Keep undo history across sessions, by storing in file.
-" Only works all the time.
-
-silent !mkdir ~/.vim/backups > /dev/null 2>&1
-set undodir=~/.vim/backups
-set undofile
+"gvim related
+set go-=m  "remove menu bar
+set go-=T  "remove toolbar
+set go-=r  "remove right-hand scroll bar
+set go-=L  "remove left-hand scroll bar
+set go-=e "make tabs ligher
+set guifont=Monospace\ 12
+set guioptions-=e
 
 " ================ Indentation ======================
-
 set autoindent
 set smartindent
 set smarttab
@@ -124,17 +103,19 @@ set softtabstop=2
 set tabstop=2
 set expandtab
 
-filetype plugin on
-filetype indent on
+" Turn Off Swap Files
+set noswapfile
+set nobackup
+set nowb
 
-" Display tabs and trailing spaces visually
-"set list listchars=tab:\ \ ,trail:·
-
-set nowrap       "Don't wrap lines
-set linebreak    "Wrap lines at convenient points
+" ================ Persistent Undo ==================
+" Keep undo history across sessions, by storing in file.
+" Only works all the time.
+silent !mkdir ~/.vim/backups > /dev/null 2>&1
+set undodir=~/.vim/backups
+set undofile
 
 " ================ Folds ============================
-
 set foldmethod=indent   "fold based on indent
 set foldnestmax=3       "deepest fold is 3 levels
 set nofoldenable        "dont fold by default
@@ -145,29 +126,41 @@ set scrolloff=3         "Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
 
+" need to reed colorscheme from guake
+set background=light
+colorscheme solarized
 
-" ================ ColorScheme ======================
-if skin == 'dark'
-  set background=dark
-  colorscheme solarized
-else
-  set background=light
-  colorscheme solarized
-endif
-
-
-
-" ================ Other Stuff ======================
+" disable arrow keys
 map <up> <nop>
 map <down> <nop>
 map <left> <nop>
 map <right> <nop>
 
+" VERY IMPORTANT (disables mouse copy pastes :/)
+map <MiddleMouse> <Nop>
+imap <MiddleMouse> <Nop>
+map <2-MiddleMouse> <Nop>
+imap <2-MiddleMouse> <Nop>
+map <3-MiddleMouse> <Nop>
+imap <3-MiddleMouse> <Nop>
+map <4-MiddleMouse> <Nop>
+imap <4-MiddleMouse> <Nop>
+
 " Autosave every 200ms
 let g:auto_save = 1
+let g:auto_save_in_insert_mode = 0
+
+" ======== tab related stuff =========
+" Tab movement
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right>   :tabnext<CR>
+
+map <F9> :call TabMove(-1)<CR>
+map <F10> :call TabMove(1)<CR>
+
+let g:taboo_tab_format = " %P/ %m "
 
 " Move current tab into the specified direction.
-"
 " @param direction -1 for left, 1 for right.
 function! TabMove(direction)
     " get number of tab pages.
@@ -188,23 +181,7 @@ function! TabMove(direction)
     endif
 endfunction
 
-" Tab movement
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-Right>   :tabnext<CR>
-
-" EXPLAIN THIS PLEASE
-map <F9> :call TabMove(-1)<CR>
-map <F10> :call TabMove(1)<CR>
-
-" Open NERDTree on vim startup (only when there is no file on the cli)
-function! StartUp()
-    if 0 == argc()
-        NERDTree
-    end
-endfunction
-
-autocmd VimEnter * call StartUp()
-
+" ========= file-related initializations ===========
 function! DefaultStuff()
   " Add 80 characters column highlight
   let &colorcolumn="80,".join(range(120,999),",")
@@ -236,56 +213,37 @@ augroup rust
   autocmd FileType rust call RustStuff()
 augroup end
 
-" VERY IMPORTANT (disables mouse copy pastes :/)
-map <MiddleMouse> <Nop>
-imap <MiddleMouse> <Nop>
-map <2-MiddleMouse> <Nop>
-imap <2-MiddleMouse> <Nop>
-map <3-MiddleMouse> <Nop>
-imap <3-MiddleMouse> <Nop>
-map <4-MiddleMouse> <Nop>
-imap <4-MiddleMouse> <Nop>
-
-
-set encoding=utf-8 " fix nerdtree's dir problem in the server
-
-set t_Co=256 "enabe 256 colors in vim
-
-"show whitespace
-:highlight ExtraWhitespace ctermbg=red guibg=red
-:match ExtraWhitespace /\s\+$/
-
-"disable visual flickering
-set novb
-
-let g:auto_save_in_insert_mode = 0
-
-"saving some space.. go --> guioptions
-:set go-=m  "remove menu bar
-:set go-=T  "remove toolbar
-:set go-=r  "remove right-hand scroll bar
-:set go-=L  "remove left-hand scroll bar
-:set go-=e "make tabs ligher
-
+" ======== NERDTree related stuff ========
 let g:NERDTreeWinSize=20
-
-:set guifont=Monospace\ 12
+let NERDTreeIgnore = ['\.beam']
+"the working directory is always the one where the active buffer is located.
+"set autochdir
+"make sure the working directory is set correctly when changing folders from
+"NERDTree
+let g:NERDTreeChDirMode=3
+let g:NERDTreeUseTCD=3
+let NERDTreeMinimalUI = 1
+let NERDTreeCustomOpenArgs = {'file': {'reuse': 'currenttab', 'where': 'p', 'keepopen': 1}, 'dir': {}}
+"gvim only :/
+nmap <C-q> :NERDTreeToggle<CR>
+" Open NERDTree on vim startup (only when there is no file on the cli)
+function! StartUp()
+    if 0 == argc()
+        NERDTree
+    end
+endfunction
+autocmd VimEnter * call StartUp()
+autocmd VimLeave * NERDTreeClose
 
 "bind F5 to toggling colorscheme
 call togglebg#map("<F6>")
 
-nnoremap <F2> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
-
+" =========== navigation related stuff ===========
 "sane pane navigation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-
-"conceal [link text](link url) as just link text.
-set conceallevel=2
-"autocmd BufRead,BufNewFile   *.md setlocal tw=80
-"autocmd BufRead,BufNewFile   *.md setlocal fo+=a
 
 "navigate through copen using meta-j and meta-k
 map <M-j> :cn<CR>
@@ -294,19 +252,8 @@ map <M-k> :cp<CR>
 map <M-o> :copen<CR>
 map <M-c> :cclose<CR>
 
-:set term=xterm-256color
-let NERDTreeIgnore = ['\.beam']
-
-:set wildignore+=node_modules/**/*
-
 "enable jsx only in .jsx files
 let g:jsx_ext_required = 1
-
-"the working directory is always the one where the active buffer is located.
-"set autochdir
-"make sure the working directory is set correctly when changing folders from
-"NERDTree
-let g:NERDTreeChDirMode=3
 
 "essentially ctrl can also be part of it mapping to Kate/latex favorite shortcut
 nmap <C-M-lt> :RustFmt<CR>
@@ -344,14 +291,14 @@ fun! s:polite_sub(search, ...) range
     echom mode()
     execute a:firstline . ',' . a:lastline . 's/' . a:search . '/' . l:replace . '/gc'
 endfun
-:command Picks call s:polite_sub("pick", "s")
-:command -nargs=+ -range=% Repl :<line1>,<line2> call s:polite_sub(<f-args>)
+command Picks call s:polite_sub("pick", "s")
+command -nargs=+ -range=% Repl :<line1>,<line2> call s:polite_sub(<f-args>)
 
 fun! s:global_search(term, ...)
     let l:type = get(a:, 1, expand('%:e'))
     execute ':grep -F "' . a:term . '" **/*.' . l:type
 endfun
-:command -nargs=+ S call s:global_search(<f-args>)
+command -nargs=+ S call s:global_search(<f-args>)
 
 let g:vrc_curl_opts = {
   \ '-sS': '',
@@ -376,12 +323,7 @@ nmap <C-b> :Buffers<CR>
 
 set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
 
-"gvim only :/
-nmap <C-q> :NERDTreeToggle<CR>
-
-set guioptions-=e
-set sessionoptions+=tabpages,globals
-let g:taboo_tab_format = " %P/ %m "
+set sessionoptions+=curdir,globals,tabpages
 
 "much faster than guake -t && guake --execute-command uptime
 "ctrl + Enter runs cargo check (cc)
@@ -405,7 +347,6 @@ fun! s:redraw()
 endfun
 
 command! -nargs=0 Fix call s:redraw()
-let NERDTreeMinimalUI = 1
 
 set ttyfast
 
@@ -414,13 +355,6 @@ set ignorecase
 set smartcase
 
 set switchbuf=useopen
-"function NERDTreeMyOpenFile(node)
-"    call a:node.activate({'reuse': 'currenttab', 'where': 'p'})
-"endfunction
-"autocmd VimEnter * :call NERDTreeAddKeyMap({ 'key': 'o', 'callback': 'NERDTreeMyOpenFile', 'scope': 'FileNode', 'override': 1 })
-"autocmd VimEnter * :call NERDTreeAddKeyMap({ 'key': '<CR>', 'callback': 'NERDTreeMyOpenFile', 'scope': 'FileNode', 'override': 1 })
-"autocmd VimEnter * :call NERDTreeAddKeyMap({'key': '<2-LeftMouse>', 'callback': 'NERDTreeMyOpenFile', 'scope': 'FileNode', 'override': 1 })
-let NERDTreeCustomOpenArgs = {'file': {'reuse': 'currenttab', 'where': 'p', 'keepopen': 1}, 'dir': {}}
 
 "open last used buffer with backspace in normal mode
 nnoremap <BS> <C-^>
