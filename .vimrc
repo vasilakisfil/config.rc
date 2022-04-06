@@ -371,3 +371,5 @@ let g:vrc_response_default_content_type = 'application/json'
 command! -nargs=0 Sw w !sudo tee % > /dev/null
 
 let g:airline_symbols_ascii = 1
+
+au FileType gitcommit setlocal tw=70
