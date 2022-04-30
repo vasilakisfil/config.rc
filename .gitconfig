@@ -43,6 +43,7 @@
   cof = !git for-each-ref --format='%(refname:short)' refs/heads | fzf | xargs git checkout
   common-words = "!f(){ git log --pretty=format:'%s' | tr \" \" \"\\n\" |  tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -nr | head -20; }; f"
   sneak="!f() { git commit --date \"$(date -d $1)\"; }; f"
+  mr=push -v -o merge_request.create -f
 [commit]
   #gpgsign = true
 [color]
