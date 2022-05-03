@@ -62,3 +62,7 @@
   newHighlight = "green 22"
 [pull]
 	rebase = false
+[diff]
+	tool = gvimdiff
+[difftool]
+	prompt = false

@@ -373,3 +373,6 @@ command! -nargs=0 Sw w !sudo tee % > /dev/null
 let g:airline_symbols_ascii = 1
 
 au FileType gitcommit setlocal tw=70
+
+"vimdiff better colors
+let g:solarized_diffmode="high"
