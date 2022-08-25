@@ -417,3 +417,6 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
+
+" eliminate the sign column entirely and put the signs into the number column.
+set signcolumn=number

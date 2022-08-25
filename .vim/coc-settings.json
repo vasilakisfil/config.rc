@@ -1,4 +1,5 @@
 {
   "rust-analyzer.enable": true,
-  "notification.disabledProgressSources": ["*"]
+  "notification.disabledProgressSources": ["*"],
+  "diagnostic.showUnused": false
 }
