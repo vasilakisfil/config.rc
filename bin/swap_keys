@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+if xmodmap -pke | grep "keycode  94" | grep -q 'grave'; then
+  xmodmap -e "keycode 49 = grave asciitilde grave asciitilde section onehalf paragraph threequarters grave asciitilde"
+  xmodmap -e "keycode 94 = guillemotleft guillemotright guillemotleft guillemotright bar brokenbar bar brokenbar less greater bar brokenbar"
+else
+  xmodmap -e "keycode 94 = grave asciitilde grave asciitilde section onehalf paragraph threequarters grave asciitilde"
+  xmodmap -e "keycode 49 = guillemotleft guillemotright guillemotleft guillemotright bar brokenbar bar brokenbar less greater bar brokenbar"
+fi
