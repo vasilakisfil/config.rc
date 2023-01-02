@@ -420,3 +420,6 @@ nmap <leader>rn <Plug>(coc-rename)
 
 " eliminate the sign column entirely and put the signs into the number column.
 set signcolumn=number
+
+" alt-a writes å in the search
+let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
