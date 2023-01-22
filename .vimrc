@@ -7,7 +7,7 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 call plug#begin()
-"not working with NERDTree :/
+Plug 'embear/vim-localvimrc'
 Plug 'tpope/vim-obsession'
 Plug 'dhruvasagar/vim-prosession'
 Plug 'vim-ruby/vim-ruby'
@@ -203,6 +203,12 @@ function! RustStuff()
   autocmd FileType rust setlocal colorcolumn=100 shiftwidth=4 softtabstop=4 tabstop=4
 endfunction
 
+function! GitcommitStuff()
+  let &colorcolumn="70,".join(range(80,999),",")
+
+  autocmd FileType rust setlocal colorcolumn=70 shiftwidth=2 softtabstop=2 tabstop=2
+endfunction
+
 call DefaultStuff()
 augroup ruby
   autocmd!
@@ -211,6 +217,10 @@ augroup end
 augroup rust
   autocmd!
   autocmd FileType rust call RustStuff()
+augroup end
+augroup gitcommit
+  autocmd!
+  autocmd FileType gitcommit call GitcommitStuff()
 augroup end
 
 " ======== NERDTree related stuff ========
@@ -423,3 +433,9 @@ set signcolumn=number
 
 " alt-a writes å in the search
 let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
+
+" this is safe because we blacklist everything except specific files
+" that appear in non-repo directories and are related to clients
+let g:localvimrc_sandbox=0
+let g:localvimrc_whitelist='/home/vasilakisfil/silent-circle/.lvimrc'
+let g:localvimrc_blacklist=['/*/.*']
