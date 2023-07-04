@@ -51,10 +51,12 @@ alias cc='f_cc(){ clear && cargo check "$@" --color=always 2>&1 | less -rKFMX };
 alias cca='f_cca(){ clear && cargo check "$@" --color=always 2>&1 --all-features | less -rKFMX }; f_cca'
 alias ccts="cc --tests"
 alias ccl='f_clippy(){ clear && cargo clippy "$@" --color=always 2>&1 | less -rKFMX }; f_clippy'
+alias ccldocs='f_clippy_docs(){ clear && cargo clippy --all --all-features "$@" --color=always -- -W missing_docs 2>&1 | less -rKFMX }; f_clippy_docs'
 alias cargodoc='f_cargodoc(){ clear && cargo doc "$@" --color=always 2>&1 | less -rKFMX }; f_cargodoc'
 #you need both --color=always 2>&1 here. One if tests fail, the other if tests succeed (to colorize the Ok).
 alias ct='f_ct(){ clear && cargo test "$@" --color=always 2>&1 -- --color=always --nocapture --test-threads=1 }; f_ct'
 alias run='f_run(){ cargo run "$@" }; f_run'
+alias lesss="less -rKFMX"
 n() {
   dir=${1:-.}
   nautilus $dir
