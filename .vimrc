@@ -43,6 +43,7 @@ Plug 'pbogut/fzf-mru.vim'
 Plug 'gcmt/taboo.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'vim-erlang/vim-erlang-runtime'
+Plug 'kamailio/vim-kamailio-syntax'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
