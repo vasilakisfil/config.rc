@@ -26,7 +26,7 @@
   wipa = '!git add . && git commit -am "wip"'
   please = push --force-with-lease
   grog = log --oneline --decorate --graph --all
-  remend = commit -a --amend --date=now
+  remend = commit -a --amend --date=now --reset-author
   squeeze = commit -a --amend
   count = rev-list --count master
   ri=rebase -i origin/master
