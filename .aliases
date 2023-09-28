@@ -41,8 +41,7 @@ alias termall=killall -15
 
 alias svim="sudo -E vim"
 
-alias cat=bat
-alias bat=batcat
+alias cat="bat --theme=\"Solarized (dark)\" --style=\"numbers,changes,header\""
 alias batt="upower -i /org/freedesktop/UPower/devices/battery_BAT0"
 alias sh!="shutdown now"
 alias cb='f_cb(){ clear && cargo build "$@" --color=always 2>&1 | less -rKFMX }; f_cb'
