@@ -115,7 +115,7 @@ function git_wrapper() {
 
 #alias git=git_wrapper
 
-export BAT_THEME="Monokai Extended Light"
+export BAT_THEME="Solarized (light)"
 
 ##### theme stuff (basically russel with some modifications) ######
 local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
