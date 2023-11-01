@@ -44,6 +44,7 @@
   common-words = "!f(){ git log --pretty=format:'%s' | tr \" \" \"\\n\" |  tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -nr | head -20; }; f"
   sneak="!f() { git commit --date \"$(date -d $1)\"; }; f"
   mr=push -v -o merge_request.create -f
+  tug="!f() { git  tag -a $1 -m \"$1\"; }; f"
 [commit]
   #gpgsign = true
 [color]
