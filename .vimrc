@@ -128,7 +128,7 @@ set sidescrolloff=15
 set sidescroll=1
 
 " need to reed colorscheme from guake
-set background=light
+set background=dark
 colorscheme solarized
 
 " disable arrow keys
