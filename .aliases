@@ -54,6 +54,7 @@ alias ccldocs='f_clippy_docs(){ clear && cargo clippy --all --all-features "$@" 
 alias cargodoc='f_cargodoc(){ clear && cargo doc "$@" --color=always 2>&1 | less -rKFMX }; f_cargodoc'
 #you need both --color=always 2>&1 here. One if tests fail, the other if tests succeed (to colorize the Ok).
 alias ct='f_ct(){ clear && cargo test "$@" --color=always 2>&1 -- --color=always --nocapture --test-threads=1 }; f_ct'
+alias fmt='cargo fmt --all'
 alias run='f_run(){ cargo run "$@" }; f_run'
 alias lesss="less -rKFMX"
 n() {
