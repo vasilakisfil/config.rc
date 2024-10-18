@@ -438,3 +438,10 @@ let g:localvimrc_blacklist=['/*/.*']
 
 " toggle line numbers
 :nmap <F12> :set invnumber<CR>
+
+" Helps formatting lists inside rust docs. Taken from
+" https://github.com/rust-lang/rust.vim/issues/435#issue-804947606
+augroup filetype_rust
+  autocmd!
+  autocmd FileType rust setlocal formatlistpat=^\\s*\\d\\+\\.\\s\\+\\\|^\\s*[-*+]\\s\\+\\\|^\\[^\\ze[^\\]]\\+\\]:
+augroup END

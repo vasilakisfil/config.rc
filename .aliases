@@ -66,11 +66,3 @@ alias o=xdg-open
 alias ipa="ip -c address show"
 alias mem='f_mem(){ smem -t -k -c pss -P "$@" | tail -n 1 }; f_mem'
 alias rbcp="f_rbcp(){ git diff --name-only master | xargs ls -1 2>/dev/null | grep '\.rb$' --color=never | xargs bundle exec rubocop --auto-correct-all }; f_rbcp"
-f_touchpad_toggle() {
-  if [ "$(gsettings get org.gnome.desktop.peripherals.touchpad send-events)" = "'enabled'" ]; then
-    gsettings set org.gnome.desktop.peripherals.touchpad send-events disabled
-  else
-    gsettings set org.gnome.desktop.peripherals.touchpad send-events enabled
-  fi
-}
-alias tchpad=f_touchpad_toggle
