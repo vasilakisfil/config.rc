@@ -1,6 +1,7 @@
 {
   "rust-analyzer.enable": true,
   "rust-analyzer.cargo.features": "all",
+  "rust-analyzer.inlayHints.enable": false,
   "notification.disabledProgressSources": ["*"],
   "diagnostic.showUnused": false,
   "suggest.autoTrigger": "trigger",

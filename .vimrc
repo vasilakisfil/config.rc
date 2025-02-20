@@ -445,3 +445,9 @@ augroup filetype_rust
   autocmd!
   autocmd FileType rust setlocal formatlistpat=^\\s*\\d\\+\\.\\s\\+\\\|^\\s*[-*+]\\s\\+\\\|^\\[^\\ze[^\\]]\\+\\]:
 augroup END
+
+"fix NERDTree tab change `hit-enter` command prompt
+"NERDTree updates the CWD whenever user changes tab. Apparently when the CWD
+"is too long, the `hit-enter` command prompt shows up for some reason.
+autocmd CmdlineEnter * set messagesopt=hit-enter,history:500
+autocmd TabEnter * set messagesopt=wait:1,history:500
