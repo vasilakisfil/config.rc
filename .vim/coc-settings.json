@@ -1,10 +1,16 @@
 {
   "rust-analyzer.enable": true,
   "rust-analyzer.cargo.features": "all",
-  "rust-analyzer.inlayHints.enable": false,
+  "rust-analyzer.cargo.buildScripts.enable": false,
+  "inlayHint.enable": false,
   "notification.disabledProgressSources": ["*"],
   "diagnostic.showUnused": false,
   "suggest.autoTrigger": "trigger",
   "suggest.minTriggerInputLength": 3,
-  "suggest.maxCompleteItemCount": 10
+  "suggest.maxCompleteItemCount": 10,
+  "workspace.ignoredFolders": [
+    "$HOME",
+    "$HOME/.cargo/**",
+    "$HOME/.rustup/**"
+  ]
 }

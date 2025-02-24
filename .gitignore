@@ -40,6 +40,7 @@
 !/.config/
 /.config/*
 !/.config/devilspie2
+!/.config/nvim
 
 
 !/.scripts/
