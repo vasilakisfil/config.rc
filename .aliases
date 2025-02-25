@@ -67,4 +67,4 @@ alias ipa="ip -c address show"
 alias mem='f_mem(){ smem -t -k -c pss -P "$@" | tail -n 1 }; f_mem'
 alias rbcp="f_rbcp(){ git diff --name-only master | xargs ls -1 2>/dev/null | grep '\.rb$' --color=never | xargs bundle exec rubocop --auto-correct-all }; f_rbcp"
 
-alias nvide='RUST_LOG=off neovide &'
+alias nvide='RUST_LOG=off setsid neovide'
