@@ -4,4 +4,6 @@ if [ "$(gsettings get org.gnome.desktop.peripherals.touchpad send-events)" = "'e
   gsettings set org.gnome.desktop.peripherals.touchpad send-events disabled
 else
   gsettings set org.gnome.desktop.peripherals.touchpad send-events enabled
+  sudo modprobe -r psmouse
+  sudo modprobe psmouse
 fi
