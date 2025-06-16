@@ -1,6 +1,8 @@
 vim.keymap.set('n', '<C-q>', '<Cmd>Neotree toggle<CR>', {silent = true})
 vim.keymap.set('n', '<C-Right>', '<Cmd>tabnext<CR>', {silent = true})
 vim.keymap.set('n', '<C-Left>', '<Cmd>tabprevious<CR>', {silent = true})
+vim.keymap.set('n', '<C-Down>', '<cmd>cnext<return>', {silent = true})
+vim.keymap.set('n', '<C-Up>', '<cmd>cprev<return>', {silent = true})
 vim.keymap.set('n', '<C-p>', '<cmd>FzfLua files<cr>', {silent = true})
 vim.keymap.set('n', '<C-b>', '<cmd>FzfLua buffers<cr>', {silent = true})
 vim.keymap.set('n', '<C-f>', '<cmd>FzfLua live_grep_native	<cr>', {silent = true})

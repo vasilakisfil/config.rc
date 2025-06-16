@@ -1,0 +1,9 @@
+#!/bin/sh
+
+device_id=`lspci -vvv | grep "audio controller" | cut -d" " -f1`
+device_dir=`ls /sys/bus/pci/devices/ | grep $device_id`
+echo 1 > /sys/bus/pci/devices/$device_dir/remove
+sleep 1
+echo 1 > /sys/bus/pci/rescan
+
+exit 0
