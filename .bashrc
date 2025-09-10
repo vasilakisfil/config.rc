@@ -1,6 +1,6 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
+
+export TERM="xterm-256color"
 
 # If not running interactively, don't do anything
 case $- in
@@ -22,10 +22,6 @@ HISTFILESIZE=2000
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
-
-# If set, the pattern "**" used in a pathname expansion context will
-# match all files and zero or more directories and subdirectories.
-#shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -74,32 +70,14 @@ esac
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+  alias ls='ls --color=auto'
+  #alias dir='dir --color=auto'
+  #alias vdir='vdir --color=auto'
 
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
-
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+  alias grep='grep --color=auto'
+  alias fgrep='fgrep --color=auto'
+  alias egrep='egrep --color=auto'
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -112,62 +90,14 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-alias disable_touchpad='python /home/vasilakis/.scripts/operate_xinput_device.py 0 Synaptics TouchPad'
-alias enable_touchpad='python /home/vasilakis/.scripts/operate_xinput_device.py 1 Synaptics TouchPad'
-
-export TERM="xterm-256color"
-
-if [ -d ~/.rvm ]; then
-  PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-fi
 
 eval "$(direnv hook bash)" #direnv
-if [ -d ~/.gvm ]; then
-  [[ -s "~/.gvm/scripts/gvm" ]] && source "~/.gvm/scripts/gvm"
-fi
-
-export ANDROID_HOME=/home/vasilakisfil/Android/Sdk
-
-export NVM_DIR="/home/vasilakisfil/.nvm"
-
-if [ -d ~/.nvm ]; then
-  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-fi
 
 export PATH="$HOME/bin:$PATH" # Add local scripts
 
 #import aliases
 if [ -f ~/.aliases ]; then
   . ~/.aliases
-fi
-
-if [ -d /usr/local/heroku/bin ]; then
-  ### Added by the Heroku Toolbelt
-  export PATH="/usr/local/heroku/bin:$PATH"
-fi
-
-if [ -d ~/.asdf ]; then
-  #add elixir, erlang etc
-  . $HOME/.asdf/asdf.sh
-  . $HOME/.asdf/completions/asdf.bash
-fi
-
-if [ -d ~/.crenv ]; then
-  #Add crystal TODO: Remove that and use asdf
-  export PATH="$HOME/.crenv/bin:$PATH"
-  eval "$(crenv init -)" #initialize crystal
-fi
-
-if [ -d ~/.go ]; then
-  # needed for go packages
-  export GOPATH=$HOME/go
-fi
-
-source ~/.tools/bashmarks.sh
-
-if [ -d ~/.jabba ]; then
-  [ -s "~/.jabba/jabba.sh" ] && source "~.jabba/jabba.sh"
 fi
 
 export BAT_THEME="Monokai Extended Light"

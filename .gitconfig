@@ -12,6 +12,7 @@
 [push]
 	default = current
 	followTags = true
+  useForceIfIncludes = true
 [giggle]
 	main-window-maximized = true
 	main-window-geometry = 700x550+0+476

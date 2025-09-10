@@ -1,28 +1,12 @@
 # Universal Shell Aliases, should be included in both Bash and ZSH.
 alias mkdir='mkdir -p'
 alias grep='grep --color=always'
-alias diff='colordiff'
 alias logout='sudo pkill -u $USER'
 alias log-out='sudo pkill -u $USER'
-alias nocolors='sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g"'
 
 #Development specific
 alias g='git'
 alias da='direnv allow'
-
-#Rails related
-alias bi='bundle install'
-alias be='bundle exec'
-alias brs='bundle exec rails s'
-alias brc='bundle exec rails c' #ovewrites bc - An arbitrary precision calculator language
-
-#Ember related
-alias e='node_modules/ember-cli/bin/ember'
-alias es='e s --live-reload=false'
-alias les='node_modules/ember-cli/bin/ember s --live-reload=false'
-alias ember_clean='rm -rf node_modules bower_components dist tmp && npm cache clean && bower cache clean'
-alias ember_install='npm install && bower install'
-alias ember_reinstall='ember_clean && ember_install'
 
 hist_alias() {
   history_var=`history`

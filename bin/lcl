@@ -1,3 +1,0 @@
-#!/bin/bash
-
-rm *.aux *.blg *.log *.run.xml *.gz *.toc *.bbl *.bcf

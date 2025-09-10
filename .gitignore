@@ -9,27 +9,24 @@
 !.zshrc
 !.vimrc
 !.gitconfig
-!vimCommands
-!.gemrc
 !.psqlrc
-!.git-flow-completion.zsh
 
 !/.vim/
 /.vim/*
 !/.vim/coc-settings.json
 
 !/bin/
-/bin/chrome
-/bin/rebar3
-/bin/wrk
-/bin/hercules
-/bin/ngrok
-/bin/swaks
-/bin/particle
+!/bin/alive
+!/bin/f
+!/bin/fix
+!/bin/lcl
+!/bin/resound
+!/bin/swap_keys
+!/bin/tchpad
+!/bin/toggle
 
 !.xbindkeysrc
 !.aliases
-!.rspec
 !.tmux.conf
 !.tools/
 !.local/bin/
