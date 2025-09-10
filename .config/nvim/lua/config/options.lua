@@ -52,7 +52,11 @@ vim.g.markdown_recommended_style = 0
 vim.g.rust_recommended_style = false
 
 if vim.g.neovide then
-  vim.o.guifont = "UbuntuMono Nerd Font Mono:h15"
+  if vim.loop.os_uname().sysname == "Darwin" then
+    vim.o.guifont = "UbuntuMono Nerd Font Mono:h18"
+  else
+    vim.o.guifont = "UbuntuMono Nerd Font Mono:h15"
+  end
   vim.g.neovide_position_animation_length = 0
   vim.g.neovide_cursor_animation_length = 0.00
   vim.g.neovide_cursor_trail_size = 0

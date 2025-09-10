@@ -117,46 +117,63 @@ alias enable_touchpad='python /home/vasilakis/.scripts/operate_xinput_device.py 
 
 export TERM="xterm-256color"
 
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
+if [ -d ~/.rvm ]; then
+  PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+fi
 
 eval "$(direnv hook bash)" #direnv
-[[ -s "/home/vasilakisfil/.gvm/scripts/gvm" ]] && source "/home/vasilakisfil/.gvm/scripts/gvm"
+if [ -d ~/.gvm ]; then
+  [[ -s "~/.gvm/scripts/gvm" ]] && source "~/.gvm/scripts/gvm"
+fi
 
 export ANDROID_HOME=/home/vasilakisfil/Android/Sdk
 
 export NVM_DIR="/home/vasilakisfil/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+if [ -d ~/.nvm ]; then
+  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+fi
 
 export PATH="$HOME/bin:$PATH" # Add local scripts
 
 #import aliases
 if [ -f ~/.aliases ]; then
-    . ~/.aliases
+  . ~/.aliases
 fi
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+if [ -d /usr/local/heroku/bin ]; then
+  ### Added by the Heroku Toolbelt
+  export PATH="/usr/local/heroku/bin:$PATH"
+fi
 
-#add elixir, erlang etc
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
+if [ -d ~/.asdf ]; then
+  #add elixir, erlang etc
+  . $HOME/.asdf/asdf.sh
+  . $HOME/.asdf/completions/asdf.bash
+fi
 
-#Add crystal TODO: Remove that and use asdf
-export PATH="$HOME/.crenv/bin:$PATH"
-eval "$(crenv init -)" #initialize crystal
+if [ -d ~/.crenv ]; then
+  #Add crystal TODO: Remove that and use asdf
+  export PATH="$HOME/.crenv/bin:$PATH"
+  eval "$(crenv init -)" #initialize crystal
+fi
 
-# needed for go packages
-export GOPATH=$HOME/go
+if [ -d ~/.go ]; then
+  # needed for go packages
+  export GOPATH=$HOME/go
+fi
 
 source ~/.tools/bashmarks.sh
 
-[ -s "/home/vasilakisfil/.jabba/jabba.sh" ] && source "/home/vasilakisfil/.jabba/jabba.sh"
+if [ -d ~/.jabba ]; then
+  [ -s "~/.jabba/jabba.sh" ] && source "~.jabba/jabba.sh"
+fi
 
 export BAT_THEME="Monokai Extended Light"
 
-
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-. "$HOME/.cargo/env"
+
+if [ -d ~/.cargo ]; then
+  . "$HOME/.cargo/env"
+fi

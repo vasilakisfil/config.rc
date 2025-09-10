@@ -1,3 +1,10 @@
+let s:uname = system("uname")
+if s:uname == "Darwin\n"
+  let is_mac = v:true
+else
+  let is_mac = v:false
+endif
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -446,8 +453,10 @@ augroup filetype_rust
   autocmd FileType rust setlocal formatlistpat=^\\s*\\d\\+\\.\\s\\+\\\|^\\s*[-*+]\\s\\+\\\|^\\[^\\ze[^\\]]\\+\\]:
 augroup END
 
-"fix NERDTree tab change `hit-enter` command prompt
-"NERDTree updates the CWD whenever user changes tab. Apparently when the CWD
-"is too long, the `hit-enter` command prompt shows up for some reason.
-autocmd CmdlineEnter * set messagesopt=hit-enter,history:500
-autocmd TabEnter * set messagesopt=wait:1,history:500
+if is_mac == v:false
+  "fix NERDTree tab change `hit-enter` command prompt
+  "NERDTree updates the CWD whenever user changes tab. Apparently when the CWD
+  "is too long, the `hit-enter` command prompt shows up for some reason.
+  autocmd CmdlineEnter * set messagesopt=hit-enter,history:500
+  autocmd TabEnter * set messagesopt=wait:1,history:500
+endif

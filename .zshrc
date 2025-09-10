@@ -45,17 +45,20 @@ setopt nocorrectall; setopt correct
 export TERM=xterm-256color
 [ -n "$TMUX" ] && export TERM=screen-256color
 
+if [ -d ~/.rvm ]; then
+  export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+  source ~/.rvm/scripts/rvm
+fi
 
-export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-source ~/.rvm/scripts/rvm
-
-
-export PATH=$HOME/npm/bin:$PATH
-source ~/.nvm/nvm.sh
-
+if [ -d ~/.nvm ]; then
+  export PATH=$HOME/npm/bin:$PATH
+  source ~/.nvm/nvm.sh
+fi
 
 eval "$(direnv hook zsh)" #direnv
-[[ -s "/home/vasilakisfil/.gvm/scripts/gvm" ]] && source "/home/vasilakisfil/.gvm/scripts/gvm"
+if [ -d ~/.gvm ]; then
+  [[ -s "~/.gvm/scripts/gvm" ]] && source "~/.gvm/scripts/gvm"
+fi
 
 export ANDROID_HOME=/home/vasilakisfil/Android/Sdk
 
@@ -66,12 +69,15 @@ export PATH="$HOME/bin:$PATH" #Add local scripts
 #import aliases
 source $HOME/.aliases
 
+if [ -d ~/.asdf ]; then
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
+fi
 
-export PATH="$HOME/.crenv/bin:$PATH" #Add crystal, TODO: Remove that and use asdf!
-eval "$(crenv init -)"
-
+if [ -d ~/.crenv ]; then
+  export PATH="$HOME/.crenv/bin:$PATH" #Add crystal, TODO: Remove that and use asdf!
+  eval "$(crenv init -)"
+fi
 
 setopt inc_append_history
 setopt hist_ignore_dups
@@ -84,11 +90,13 @@ source ~/.tools/bashmarks.sh
 
 export CURRENT_PROJECT_PATH=$HOME/.current-project
 
-function chpwd {
-   #much faster than: guake -r ${PWD##*/}
-   #use --print-reply to debug, otherwise remains silent (for envs that don't have guake)
-   dbus-send --session --type=method_call --dest=org.guake3.RemoteControl /org/guake3/RemoteControl org.guake3.RemoteControl.rename_current_tab string:"${PWD##*/}" > /dev/null
-}
+if [[ $(uname) != "Darwin" ]]; then
+  function chpwd {
+    #much faster than: guake -r ${PWD##*/}
+    #use --print-reply to debug, otherwise remains silent (for envs that don't have guake)
+    dbus-send --session --type=method_call --dest=org.guake3.RemoteControl /org/guake3/RemoteControl org.guake3.RemoteControl.rename_current_tab string:"${PWD##*/}" > /dev/null
+  }
+fi
 
 #allow iex to remember history
 export ERL_AFLAGS="-kernel shell_history enabled"
@@ -96,7 +104,9 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 #fix android studio lib issues
 export ANDROID_EMULATOR_USE_SYSTEM_LIBS=1
 
-[ -s "/home/vasilakisfil/.jabba/jabba.sh" ] && source "/home/vasilakisfil/.jabba/jabba.sh"
+if [ -d ~/.jabba ]; then
+  [ -s "~/.jabba/jabba.sh" ] && source "~/.jabba/jabba.sh"
+fi
 
 export PATH="$HOME/.cargo/env:$PATH"
 
