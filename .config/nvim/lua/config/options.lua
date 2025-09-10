@@ -53,7 +53,7 @@ vim.g.rust_recommended_style = false
 
 if vim.g.neovide then
   if vim.loop.os_uname().sysname == "Darwin" then
-    vim.o.guifont = "UbuntuMono Nerd Font Mono:h18"
+    vim.o.guifont = "UbuntuMono Nerd Font Mono:h20"
   else
     vim.o.guifont = "UbuntuMono Nerd Font Mono:h15"
   end
