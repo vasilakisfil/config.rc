@@ -20,13 +20,16 @@ setopt inc_append_history
 setopt hist_ignore_dups
 setopt hist_ignore_space
 
-if [[ $(uname) != "Darwin" ]]; then
-  function chpwd {
+echo -ne "\033]0;$PWD\007"
+function chpwd {
+  if [[ $(uname) == "Darwin" ]]; then
+    echo -ne "\033]0;$PWD\007"
+  else
     #much faster than: guake -r ${PWD##*/}
     #use --print-reply to debug, otherwise remains silent (for envs that don't have guake)
     dbus-send --session --type=method_call --dest=org.guake3.RemoteControl /org/guake3/RemoteControl org.guake3.RemoteControl.rename_current_tab string:"${PWD##*/}" > /dev/null
-  }
-fi
+  fi
+}
 
 #allow iex to remember history
 export ERL_AFLAGS="-kernel shell_history enabled"
