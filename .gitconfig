@@ -1,24 +1,24 @@
 [user]
-	name = Filippos Vasilakis
+  name = Filippos Vasilakis
   email = vasilakisfil@gmail.com
   signingKey = vasilakisfil@gmail.com
 [core]
-	editor = vim
+  editor = vim
   hooksPath = /home/vasilakisfil/.githooks/
-	excludesfile = ~/.gitignore_global
+  excludesfile = ~/.gitignore_global
   pager = delta
 [interactive]
   diffFilter = delta --color-only --features=interactive
 [push]
-	default = current
-	followTags = true
+  default = current
+  followTags = true
   useForceIfIncludes = true
 [giggle]
-	main-window-maximized = true
-	main-window-geometry = 700x550+0+476
-	history-view-vpane-position = 453
-	main-window-view = HistoryView
-	file-view-vpane-position = 205
+  main-window-maximized = true
+  main-window-geometry = 700x550+0+476
+  history-view-vpane-position = 453
+  main-window-view = HistoryView
+  file-view-vpane-position = 205
 [alias]
   s = status --short --branch
   co = checkout
@@ -63,18 +63,15 @@
   newNormal = "green"
   newHighlight = "green 22"
 [pull]
-	rebase = false
+  rebase = false
 [diff]
-	tool = gvimdiff
+  tool = gvimdiff
 [difftool]
   prompt = false
-
 [delta]
   features = decorations
-
 [delta "interactive"]
   keep-plus-minus-markers = false
-
 [delta "decorations"]
   commit-decoration-style = blue ol
   commit-style = raw
