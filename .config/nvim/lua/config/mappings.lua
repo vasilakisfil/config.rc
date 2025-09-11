@@ -9,6 +9,7 @@ vim.keymap.set('n', '<C-f>', '<cmd>FzfLua live_grep_native	<cr>', {silent = true
 vim.keymap.set('n', '<C-S-t>', '<cmd>tabnew<cr>', {silent = true})
 vim.keymap.set('n', '<C-M-lt>', '<cmd>RustFmt<cr>', {silent = true})
 vim.keymap.set('n', '<C-M-«>', '<cmd>RustFmt<cr>', {silent = true})
+vim.keymap.set('n', '<C-M-z>', '<cmd>RustFmt<cr>', {silent = true})
 vim.keymap.set('n', '<BS>', '<C-^>', {silent = true})
 
 vim.keymap.set('n', '<up>', '<nop>', {silent = true})

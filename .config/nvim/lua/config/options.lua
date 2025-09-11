@@ -65,4 +65,5 @@ if vim.g.neovide then
   vim.g.neovide_scroll_animation_far_lines = 0
   vim.g.neovide_scroll_animation_length = 0.00
   vim.g.neovide_fullscreen = true
+  vim.g.neovide_input_macos_option_key_is_meta = 'only_left'
 end
