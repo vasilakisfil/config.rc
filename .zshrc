@@ -56,3 +56,9 @@ if [[ -n "$PS1" ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_CONNECTION" ]]; then
   tmux new -s 0
   tmux attach -t 0
 fi
+
+#export PATH=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib:$PATH
+#export LIBRARY_PATH="$LIBRARY_PATH:/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib" # Needed for Rust compilation and linking
+#export SDKROOT=$(xcrun --sdk macosx --show-sdk-path)
+#export LIBRARY_PATH="$LIBRARY_PATH:$SDKROOT/usr/lib"
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"

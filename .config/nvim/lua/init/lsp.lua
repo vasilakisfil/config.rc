@@ -24,7 +24,7 @@ vim.api.nvim_create_autocmd({ "CursorHold" }, {
             end
         end
         vim.diagnostic.open_float({
-            scope = "line",
+            scope = "cursor",
             focusable = false,
             close_events = {
                 "CursorMoved",
@@ -33,15 +33,15 @@ vim.api.nvim_create_autocmd({ "CursorHold" }, {
                 "InsertCharPre",
                 "WinLeave",
             },
-            severity = {min = vim.diagnostic.severity.ERROR}
+            --severity = {min = vim.diagnostic.severity.ERROR}
         })
     end
 })
 
 vim.diagnostic.config({
   virtual_text = false,
-  virtual_lines = {severity = {min = vim.diagnostic.severity.ERROR}},
-  signs = {severity = {min = vim.diagnostic.severity.ERROR}},
+  virtual_lines = false,--{severity = {min = vim.diagnostic.severity.ERROR}},
+  signs = true,
   underline = {severity = {min = vim.diagnostic.severity.ERROR}},
 })
 

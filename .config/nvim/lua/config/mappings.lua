@@ -10,6 +10,8 @@ vim.keymap.set('n', '<C-S-t>', '<cmd>tabnew<cr>', {silent = true})
 vim.keymap.set('n', '<C-M-lt>', '<cmd>RustFmt<cr>', {silent = true})
 vim.keymap.set('n', '<C-M-«>', '<cmd>RustFmt<cr>', {silent = true})
 vim.keymap.set('n', '<C-M-z>', '<cmd>RustFmt<cr>', {silent = true})
+vim.keymap.set('n', '<C-D-z>', '<cmd>RustFmt<cr>', {silent = true})
+vim.keymap.set('n', '<C-D-z>', '<cmd>RustFmt<cr>', {silent = true})
 vim.keymap.set('n', '<BS>', '<C-^>', {silent = true})
 
 vim.keymap.set('n', '<up>', '<nop>', {silent = true})
@@ -29,3 +31,8 @@ vim.keymap.set('n', '<C-k>', '<C-w>k', {silent = true})
 vim.keymap.set('n', '<C-l>', '<C-w>l', {silent = true})
 
 vim.keymap.set('i', '<D-`>', '`', {silent = true})
+
+vim.keymap.set('n', '<M-j>', '<cmd>cn<cr>', {silent = true})
+vim.keymap.set('n', '<M-k>', '<cmd>cp<cr>', {silent = true})
+vim.keymap.set('n', '<M-o>', '<cmd>copen<cr>', {silent = true})
+vim.keymap.set('n', '<M-c>', '<cmd>cclose<cr>', {silent = true})

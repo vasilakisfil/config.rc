@@ -105,5 +105,5 @@ export BAT_THEME="Monokai Extended Light"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 if [ -d ~/.cargo ]; then
-  . "$HOME/.cargo/env"
-fi
+  fi
+. "$HOME/.cargo/env"

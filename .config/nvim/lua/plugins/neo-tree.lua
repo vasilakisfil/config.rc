@@ -37,7 +37,7 @@ return {
             { "current_filter" },
             { "name" },
             { "clipboard" },
-            { "diagnostics", errors_only = true },
+            { "diagnostics" },
           },
           file = {
             { "indent" },
